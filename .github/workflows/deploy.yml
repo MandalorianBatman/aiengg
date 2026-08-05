@@ -1,18 +1,16 @@
 name: deploy
 
-# Trigger after the CI workflow successfully builds + pushes the image.
-# Using `workflow_run` (instead of `push`) avoids a race where deploy tries
-# to `docker pull` a tag that CI hasn't finished publishing yet.
-# `workflow_dispatch` and the labelled-PR path remain for manual / preview
-# deploys that don't need a fresh CI build.
+# Deploy strictly after CI has built and published the image. Using
+# `workflow_run` (instead of `push`) avoids a race where deploy tries to
+# `docker pull` a tag CI hasn't finished publishing yet.
+#
+# For manual rebuilds: trigger the `ci` workflow via `workflow_dispatch`
+# (it'll build + push, and this workflow will pick it up automatically).
 on:
   workflow_run:
     workflows: ["ci"]
     types: [completed]
   workflow_dispatch:
-  pull_request:
-    types: [labeled]
-    branches: [main]
 
 concurrency:
   group: deploy-${{ github.event.workflow_run.head_branch || github.ref }}
@@ -23,10 +21,7 @@ jobs:
     name: deploy (quartz)
     runs-on: [self-hosted, aiengg, linux, x64]
     environment: production
-    if: |
-      github.event_name == 'workflow_dispatch' ||
-      github.event_name == 'pull_request' ||
-      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     steps:
       - uses: actions/checkout@v5
 
@@ -44,8 +39,6 @@ jobs:
           # When triggered by workflow_run, check out the SHA that CI built.
           if [ "${{ github.event_name }}" = "workflow_run" ]; then
             DEPLOY_REF="${{ github.event.workflow_run.head_sha }}"
-          elif [ "${{ github.event_name }}" = "pull_request" ]; then
-            DEPLOY_REF="refs/pull/${{ github.event.pull_request.number }}/head"
           else
             DEPLOY_REF="${{ github.ref }}"
           fi
@@ -59,8 +52,6 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_run" ]; then
             IMAGE_TAG="${{ github.event.workflow_run.head_sha }}"
-          elif [ "${{ github.event_name }}" = "pull_request" ]; then
-            IMAGE_TAG="${{ github.event.pull_request.head.sha }}"
           else
             IMAGE_TAG="${{ github.sha }}"
           fi

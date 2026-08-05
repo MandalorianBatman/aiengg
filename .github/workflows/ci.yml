@@ -37,5 +37,10 @@ jobs:
           tags: |
             ghcr.io/mandalorianbatman/aiengg-docsify:${{ github.sha }}
             ghcr.io/mandalorianbatman/aiengg-docsify:latest
-          cache-from: type=registry,ref=ghcr.io/mandalorianbatman/aiengg-docsify:buildcache
+          # Cache layers in a separate `buildcache` image so the published
+          # `latest` / sha tags stay clean. cache-from is a list so first
+          # builds fall back to the prior image and never fail.
+          cache-from: |
+            type=registry,ref=ghcr.io/mandalorianbatman/aiengg-docsify:buildcache
+            type=registry,ref=ghcr.io/mandalorianbatman/aiengg-docsify:latest
           cache-to: type=registry,ref=ghcr.io/mandalorianbatman/aiengg-docsify:buildcache,mode=max

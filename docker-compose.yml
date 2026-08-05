@@ -1,9 +1,15 @@
 services:
   quartz:
+    # Use the image pushed by CI (override at deploy time with $IMAGE).
+    # Setting `image:` here — instead of `build:` — means `docker compose
+    # up -d` runs the image GHCR already published, instead of rebuilding
+    # from source on the host. The Dockerfile is still here for local
+    # builds (`docker compose build`) and for CI (`docker build ...`).
+    image: ${IMAGE:-ghcr.io/mandalorianbatman/aiengg-docsify:latest}
     build:
       context: .
       dockerfile: docker/Dockerfile
-    container_name: aiengg-quartz
+    container_name: aiengg-docsify
     restart: unless-stopped
     ports:
       - "127.0.0.1:3000:3000"
