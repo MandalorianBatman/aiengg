@@ -1,0 +1,32 @@
+# Context Window
+
+**Category:** 
+
+## Definition
+
+The number of tokens the model can attend to at once. Each token's vector gets context from every other token in the window, making the cost O(N²). Larger context = dramatically more compute.
+
+**Extreme example:** 1M token context means 1M × 1M = 1 trillion attention computations per token.
+
+## Why It Matters
+
+Context window is the defining constraint for LLM applications. It determines how much document/code/conversation you can include. The quadratic cost means doubling the window quadruples the compute — this is why KV caching is critical.
+
+## Analogy
+
+A context window is like the size of your desk. A small desk = you can only work with a few pages at once. A huge desk = you can spread out an entire book, but it costs more (bigger room, more lights). KV cache is like keeping your place with sticky notes so you don't have to re-read everything each time you add a new page.
+
+## Mentioned In
+
+[LLM Basics & Transformer Internals](../sessions/llm-basics-transformer-internals.md), [Training Pipeline & Tool Use](../sessions/llm-training-pipeline-tool-use.md)
+
+## Related Concepts
+
+- [KV Cache](kv-cache.md)
+- [Attention](attention.md)
+- [Input vs Output Tokens](input-vs-output-tokens.md)
+
+## Further Reading
+
+- [Extending Context Windows (Lilian Weng)](https://lilianweng.github.io/posts/2023-10-05-context-eval/)
+- [FlashAttention paper](https://arxiv.org/abs/2205.14135)

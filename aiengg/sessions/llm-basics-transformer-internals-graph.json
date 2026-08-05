@@ -1,0 +1,205 @@
+{
+  "source": "recording-51.srt",
+  "title": "LLM Basics & Transformer Internals",
+  "instructor": "Gaurav Sen (Speaker 0)",
+  "duration": "02:09:55",
+  "speaker_count": 25,
+  "segment_count": 1991,
+  "cohort": "AI Engineering Cohort (InterviewReady / Gaurav Sen)",
+  "session_goals": [
+    "Build intuition for LLM terminology used in class, teams, papers, and blogs",
+    "Remove one layer of the LLM and see what's inside — focus on the transformer"
+  ],
+  "concepts": [
+    {
+      "id": "llm",
+      "name": "Large Language Model (LLM)",
+      "definition": "A neural network trained to predict the next token of an input sequence",
+      "category": "core-concept",
+      "alternatives_avoided": ["don't use 'world' — only 'next token of input sequence'"]
+    },
+    {
+      "id": "next_token_prediction",
+      "name": "Next-Token Prediction",
+      "definition": "The fundamental objective of an LLM — given an input sequence, predict the most likely next token. Output becomes part of the next input (autoregressive).",
+      "example": "All that glitters → is → not → gold → .",
+      "category": "core-mechanism"
+    },
+    {
+      "id": "token",
+      "name": "Token",
+      "definition": "A unit of text (often a word or sub-word) that the LLM consumes and produces. Input text is split into tokens before being passed to the model.",
+      "category": "input-unit",
+      "related_algorithms": ["Byte Pair Encoding (BPE)"]
+    },
+    {
+      "id": "bpe",
+      "name": "Byte Pair Encoding (BPE)",
+      "definition": "A popular tokenization algorithm that splits text into tokens. Sub-word units — meaningless at the surface (e.g., 'coro' + 'nation') but optimized for LLM consumption.",
+      "category": "algorithm"
+    },
+    {
+      "id": "vector",
+      "name": "Vector (Embedding)",
+      "definition": "A coordinate in a multi-dimensional space assigned to each token. Dimension count is the model size (e.g., 768 in GPT-2, 8192 in modern large models). Each dimension is conceptually a 'feature'.",
+      "example_dimensions": ["768", "8192"],
+      "category": "representation"
+    },
+    {
+      "id": "byte_pair_examples",
+      "name": "Byte Pair Encoding Examples",
+      "examples": ["coronation → coro + nation", "legal → leg + al", "kingly", "royal"],
+      "note": "These tokens are meaningless in isolation but cluster together in the LLM's vector space because the model learns 'royalty' as a feature.",
+      "category": "example"
+    },
+    {
+      "id": "transformer",
+      "name": "Transformer",
+      "definition": "The internal architecture used by LLMs. A sequence of stacked blocks containing attention and feed-forward layers. 'A bunch of transformers put together' = an LLM.",
+      "category": "architecture",
+      "key_paper": "Attention Is All You Need"
+    },
+    {
+      "id": "attention",
+      "name": "Attention",
+      "definition": "A mechanism that lets each token look at every other token, computing similarity scores to push vectors into the right direction. Turns ambiguous vectors into contextualized vectors.",
+      "category": "mechanism",
+      "outputs": "contextualized vectors"
+    },
+    {
+      "id": "qkv",
+      "name": "Q, K, V (Query, Key, Value)",
+      "definition": "Three vectors per token computed by multiplying the input vector with three matrices. Used by attention: sim = Q · K^T, output = softmax(sim) · V.",
+      "category": "mechanism",
+      "intuition": "Why Q ≠ K? Mathematically a roundabout way; conceptually explored later in class."
+    },
+    {
+      "id": "multi_head_attention",
+      "name": "Multi-Head Attention",
+      "definition": "Multiple attention heads run in parallel. Each head learns to focus on different aspects of the token relationships.",
+      "category": "mechanism"
+    },
+    {
+      "id": "masking",
+      "name": "Masked Attention",
+      "definition": "Masks the upper triangle of the similarity matrix so tokens can't see future tokens. Reason: yields N predictions from N tokens instead of just 1, giving N training signals per sentence.",
+      "category": "mechanism",
+      "analogy": "Like a test — you can't look ahead and cheat."
+    },
+    {
+      "id": "feed_forward",
+      "name": "Feed-Forward Neural Network",
+      "definition": "A per-token block inside the transformer that maps 8192-D vectors to 8192-D vectors but with transformed values. Builds new features (e.g., area, ratio, density) from existing ones; output shape = input shape.",
+      "category": "block",
+      "intuition": "Length × breadth = area; ratio of length/breadth; quality of image. Features derived from old features."
+    },
+    {
+      "id": "linear_layer",
+      "name": "Linear Layer (Unembedding)",
+      "definition": "Final layer of the transformer that maps the 8192-D vector into a probability distribution over the entire vocabulary (e.g., 20k or 40k tokens).",
+      "category": "block",
+      "outputs": "N × vocabulary_size probabilities"
+    },
+    {
+      "id": "ngrams",
+      "name": "N-grams",
+      "definition": "Classical next-token prediction using probability tables. LLMs do the same thing but with massive transformations instead of simple frequency counts.",
+      "category": "history",
+      "link": "Google used vector-based n-gram-like models since 2012"
+    },
+    {
+      "id": "context_window",
+      "name": "Context Window",
+      "definition": "The number of tokens the model can attend to. Each token's vector gets context from the rest of the window, so the cost is N × N. Larger context = dramatically more compute.",
+      "category": "hyperparameter",
+      "examples": ["1M tokens → 1M × 1M context propagation per token"]
+    },
+    {
+      "id": "kv_cache",
+      "name": "KV Cache",
+      "definition": "Memoization of Key and Value vectors for previous tokens. Reuses precomputed similarities when generating new tokens — saves recomputing the entire N × N context.",
+      "category": "optimization",
+      "tradeoff": "Memory-expensive; critical for long-context performance."
+    },
+    {
+      "id": "vocabulary",
+      "name": "Vocabulary",
+      "definition": "The set of tokens the model knows. Output probability distribution has one probability per vocabulary token. Smaller vocabulary = cheaper.",
+      "category": "hyperparameter",
+      "examples": ["20k", "40k", "100k+"]
+    },
+    {
+      "id": "model_parameters",
+      "name": "Model Parameters",
+      "definition": "The numbers stored in the weight matrices. 'What is stored on disk' when you download a model.",
+      "category": "hyperparameter"
+    },
+    {
+      "id": "temperature",
+      "name": "Temperature / Top-k Sampling",
+      "definition": "Strategies for picking from the output probability distribution. Greedy = always pick max. Temperature / top-k add randomization.",
+      "category": "decoding"
+    },
+    {
+      "id": "input_output_tokens",
+      "name": "Input vs Output Tokens",
+      "definition": "Input tokens = context the model receives (docs, search results, prior conversation). Output tokens = what the model generates. In typical apps, input tokens > output tokens.",
+      "category": "operational"
+    }
+  ],
+  "qa_themes": [
+    {
+      "theme": "What is a vector, really?",
+      "answer": "A token's coordinate in a multi-dimensional space. Each dimension is conceptually a feature the model has learned (e.g., 'how south is this city from Delhi'). But the model is just predicting the next token — we don't know what each dimension truly represents."
+    },
+    {
+      "theme": "Why meaningful BPE tokens cluster together",
+      "answer": "We expect 'coronation', 'legal', 'kingly', 'royal' to cluster. In reality, the LLM's internal vectors may not look meaningful to humans, but the model has learned that 'royalty' is a useful feature for predicting next tokens."
+    },
+    {
+      "theme": "Are LLM and N-grams the same?",
+      "answer": "Yes, conceptually — both do next-token prediction. LLMs do it with massive learned transformations instead of frequency counts."
+    },
+    {
+      "theme": "What is the feed-forward network doing?",
+      "answer": "It transforms the 8192-D vector into another 8192-D vector with more useful features. Like deriving 'area' from 'length' and 'breadth' for describing a picture."
+    },
+    {
+      "theme": "Why is there a context window limit?",
+      "answer": "Every token attends to all others. A 1M-token context means each token gets context from 1M others, and this happens 1M times. KV cache helps but is memory-expensive."
+    }
+  ],
+  "homework": [
+    "Look up 'context window' and 'model parameters' definitions",
+    "Internal motivation: you'll need these concepts next week"
+  ],
+  "key_takeaways": [
+    "An LLM is a transformer-stack that predicts the next token autoregressively",
+    "Tokens are sub-word units (BPE) mapped to vectors in a high-dimensional space",
+    "Attention turns ambiguous vectors into contextualized vectors via Q/K/V similarity",
+    "Masked attention gives N training signals per sentence of N tokens",
+    "Feed-forward layers transform features into more useful features (same shape in/out)",
+    "The linear layer at the end produces a probability distribution over vocabulary",
+    "KV cache and vocabulary size are critical for performance and cost"
+  ],
+  "entities": {
+    "people": [
+      {"name": "Gaurav Sen", "role": "Instructor", "speaker_id": 0},
+      {"name": "Swagata", "role": "Student", "speaker_id": 8},
+      {"name": "Chinmay", "role": "Student", "speaker_id": 13},
+      {"name": "Ramya", "role": "Student", "speaker_id": 11},
+      {"name": "Raghav", "role": "Student", "speaker_id": 2},
+      {"name": "Deva", "role": "Student", "speaker_id": 6},
+      {"name": "Andrew", "role": "Student", "speaker_id": "chat"},
+      {"name": "Deepak", "role": "Student", "speaker_id": 23},
+      {"name": "Aish", "role": "Student", "speaker_id": 10}
+    ],
+    "papers": [
+      {"title": "Attention Is All You Need", "topic": "Transformer architecture"}
+    ],
+    "open_questions": [
+      "Why do we need 3 separate matrices (Q, K, V) instead of using the same vector?",
+      "Mathematical justification (deferred to end-of-class deep dive)"
+    ]
+  }
+}

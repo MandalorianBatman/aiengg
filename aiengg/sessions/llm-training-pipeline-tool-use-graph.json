@@ -1,0 +1,228 @@
+{
+  "source": "recording-52.srt",
+  "title": "LLM Training Pipeline, Tool Use & Fine-Tuning",
+  "instructor": "Gaurav Sen (Speaker 1)",
+  "co_hosts": ["Tanishk (IIT Bombay)", "Ariana (IIT Madras)", "Gaurav (AI engineer)"],
+  "duration": "02:49:25",
+  "speaker_count": 25,
+  "segment_count": 2559,
+  "cohort": "AI Engineering Cohort (InterviewReady / Gaurav Sen)",
+  "session_goals": [
+    "Build foundations for understanding how LLMs are trained",
+    "Demystify pre-training, post-training (SFT), and model serving",
+    "Introduce tool calling / function calls as a fine-tuning outcome",
+    "Survey preference optimization algorithms (GRPO, DPO, PPO)"
+  ],
+  "agenda": [
+    "Pre-training (how a base model is built)",
+    "Post-training / supervised fine-tuning (SFT)",
+    "Tool calling / function calls",
+    "Model serving"
+  ],
+  "concepts": [
+    {
+      "id": "pre_training",
+      "name": "Pre-training",
+      "definition": "First stage of LLM training. Public datasets (e.g., FineWeb2, BigCode, SWE-rebench, NASA, Google's private corpora) are passed through a transformer. The model learns language structure, grammar, world knowledge — 'most of the intelligence' is here.",
+      "category": "training-stage",
+      "artifact": "Base model"
+    },
+    {
+      "id": "base_model",
+      "name": "Base Model",
+      "definition": "The output of pre-training. Knows how to construct English sentences; has world knowledge in weights. Not yet format/tone-aligned.",
+      "category": "artifact"
+    },
+    {
+      "id": "data_pipeline",
+      "name": "Pre-training Data Pipeline",
+      "definition": "clone sources → filter (e.g., license, file-type) → near-deduplicate → tokenize. Example: BigCode: 220M GitHub repos → 102 TB → 30% file filter → 6.4 TB after license+dedupe → 3 TB final.",
+      "category": "pipeline",
+      "examples": ["FineWeb2", "BigCode", "SWE-rebench", "NASA corpus", "Google private datasets"]
+    },
+    {
+      "id": "fill_in_blank",
+      "name": "Fill-in-the-Blank Training",
+      "definition": "Each sentence of N tokens is converted into N training questions, one per token. Sentence 'There is no tomorrow.' → 'There is no ___' at each position. Predicts the next token at every position simultaneously.",
+      "category": "training-technique",
+      "efficiency": "N tokens = N training signals per sentence"
+    },
+    {
+      "id": "masked_attention_recap",
+      "name": "Masking Recap",
+      "definition": "Same as Recording 51 — prevents looking ahead. Crucial for turning 1 sentence into N training pairs.",
+      "category": "training-technique"
+    },
+    {
+      "id": "training_loop",
+      "name": "Training Loop",
+      "definition": "Predict token → compare to expected → compute loss (cross-entropy) → backprop → update weights. All weights inside transformer (Q/K/V matrices, feed-forward, embedding, linear layer) are updated.",
+      "category": "training-mechanism"
+    },
+    {
+      "id": "cross_entropy_loss",
+      "name": "Cross-Entropy Loss",
+      "definition": "Loss = -log(p_expected_token) + sum(-log(1 - p_other_tokens)). If p_expected = 1, loss = 0. If model assigns wrong token high probability, loss → ∞.",
+      "category": "loss-function",
+      "intuition": "Right prediction = 0. Wrong prediction = blow up."
+    },
+    {
+      "id": "sigmoid_for_loss",
+      "name": "Sigmoid (conceptual)",
+      "definition": "Used in the class as a teaching tool for understanding loss. Sigmoid of 20 ≈ 1, sigmoid of -20 ≈ 0. Modern RLHF/preference optimization uses other functions (GRPO, DPO, PPO), but sigmoid is the conceptual anchor.",
+      "category": "loss-function",
+      "note": "In production: GRPO (DeepSeek, popular for math/code), DPO, PPO are used."
+    },
+    {
+      "id": "sft",
+      "name": "Supervised Fine-Tuning (SFT)",
+      "definition": "Second stage. Take use-case-specific data (e.g., sales calls, transcripts) and fine-tune the model. Changes tone, format, jargon. 'Most of the behavior is here.'",
+      "category": "training-stage",
+      "data_format": "Input (instruction) + Output (human-written answer)"
+    },
+    {
+      "id": "post_training",
+      "name": "Post-Training",
+      "definition": "Umbrella term for SFT and preference optimization. Where the model acquires the right format, tone, and tool-use behavior.",
+      "category": "training-stage"
+    },
+    {
+      "id": "preference_optimization",
+      "name": "Preference Optimization (RLHF family)",
+      "definition": "Algorithms that learn from preference data (which output is better) instead of just human-written outputs. Variants: GRPO, DPO, PPO.",
+      "category": "training-stage",
+      "algorithms": ["GRPO", "DPO", "PPO"]
+    },
+    {
+      "id": "grpo",
+      "name": "GRPO (Group Relative Policy Optimization)",
+      "definition": "Popularized by DeepSeek; used for math and code. Generates multiple outputs per query and learns relative preferences within the group.",
+      "category": "algorithm"
+    },
+    {
+      "id": "dpo",
+      "name": "DPO (Direct Preference Optimization)",
+      "definition": "Alternative to PPO; directly optimizes the model on preference pairs without a separate reward model.",
+      "category": "algorithm"
+    },
+    {
+      "id": "ppo",
+      "name": "PPO (Proximal Policy Optimization)",
+      "definition": "Classic RLHF algorithm; uses a reward model + policy gradient. Older but still used.",
+      "category": "algorithm"
+    },
+    {
+      "id": "tool_calling",
+      "name": "Tool Calling / Function Calls",
+      "definition": "LLMs cannot actually make function calls — they only output tokens. Through fine-tuning, they're trained to output a special token template like 'time = [calendar] [get_current_time] [result]' that the server-side parses and executes. The result is fed back into the next prompt.",
+      "category": "capability",
+      "key_insight": "Models output TOKENS that the server interprets. The actual call is server-side."
+    },
+    {
+      "id": "tool_call_template",
+      "name": "Tool Call Template",
+      "definition": "A textual convention the model is trained to produce: <tool_name> <parameter> <placeholder for result>. After data is filled in, the model sees the result and continues.",
+      "example": "time = [calendar] [get_current_time] [9:35 AM]",
+      "category": "format"
+    },
+    {
+      "id": "model_serving",
+      "name": "Model Serving",
+      "definition": "After post-training, weights are frozen and deployed to GPUs. Users send queries and receive responses. Internal weights are not changed at inference time.",
+      "category": "deployment"
+    },
+    {
+      "id": "gpu_orchestration",
+      "name": "GPU Orchestration (Pipeline Parallelism)",
+      "definition": "When a model is too large to fit on one GPU, different layers sit on different GPUs. An orchestrator passes data between them. Output flows back to the orchestrator → next GPU → eventually final prediction.",
+      "category": "infrastructure"
+    },
+    {
+      "id": "vocabulary_recap",
+      "name": "Vocabulary Size",
+      "definition": "Number of tokens the model knows. Output probability distribution has one probability per vocabulary token. The transformer ends with a linear layer that maps N × D → N × vocabulary.",
+      "category": "hyperparameter"
+    },
+    {
+      "id": "context_window_recap",
+      "name": "Context Window (recap)",
+      "definition": "Max tokens the model can attend to. 1M context ≠ 1M tokens of info — every token gets context from all 1M others (1M × 1M propagation). KV cache is critical.",
+      "category": "hyperparameter"
+    },
+    {
+      "id": "kv_cache_recap",
+      "name": "KV Cache (recap)",
+      "definition": "Memoization of K and V vectors for previously-seen tokens. Prevents re-computing the entire N × N similarity matrix on every new token.",
+      "category": "optimization"
+    },
+    {
+      "id": "input_output_dimensions",
+      "name": "Transformer Input/Output Dimensions",
+      "definition": "Input: N tokens → N × D embeddings (D = 8192, etc.). After position encoding: N × D. After norm: N × D. After QKV: three N × D. After attention: N × D. After feed-forward: N × D (with intermediate N × 4D → N × D). After final linear: N × vocabulary.",
+      "category": "architecture-detail"
+    },
+    {
+      "id": "data_shortage",
+      "name": "Data Shortage",
+      "definition": "We are running out of publicly available training data. Synthetic data and more social-media / robot data are options, but each has tradeoffs.",
+      "category": "industry-trend"
+    }
+  ],
+  "qa_themes": [
+    {
+      "theme": "Does SFT involve manual annotation?",
+      "answer": "The output is human-written once, but losses are computed automatically. The model is not penalized by a human."
+    },
+    {
+      "theme": "How do you penalize on tokens with little context?",
+      "answer": "Deferred. The model still gets a loss signal at every position; the question is meaningful for further class discussion."
+    },
+    {
+      "theme": "What is the input/output size of the transformer?",
+      "answer": "N tokens → N × D throughout attention and feed-forward. The final linear layer maps N × D → N × vocabulary. Output shape = N × |V|."
+    },
+    {
+      "theme": "How does tool calling actually work?",
+      "answer": "The model outputs a special token template; the server interprets it and executes the function; the result is appended to the prompt and the model continues."
+    },
+    {
+      "theme": "What are some modern preference optimization algorithms?",
+      "answer": "GRPO (DeepSeek, math/code), DPO (direct preference), PPO (classic RLHF). Sigmoid is the conceptual anchor."
+    },
+    {
+      "theme": "Why does input token count usually exceed output token count?",
+      "answer": "Apps pass documents, search results, page contents as input. Output is the model's summarized response."
+    }
+  ],
+  "homework": [
+    "Paper on preference optimization (GRPO/DPO/PPO) to be shared in reading material",
+    "Next Sunday: coding session — bring laptops, Google Colab links will be shared"
+  ],
+  "key_takeaways": [
+    "LLM training = pre-training (intelligence) + post-training (behavior) + serving",
+    "Pre-training: tokenize massive data, predict next token at every position, cross-entropy loss",
+    "SFT: human-written QA pairs for format/tone/jargon",
+    "Tool calling is a TEXTUAL convention — the model emits tokens; the server interprets",
+    "Preference optimization refines behavior with reward signals (GRPO, DPO, PPO)",
+    "Model serving freezes weights; KV cache and vocabulary are key knobs for cost/performance"
+  ],
+  "entities": {
+    "people": [
+      {"name": "Gaurav Sen", "role": "Instructor", "speaker_id": 1},
+      {"name": "Tanishk", "role": "Co-host (AI engineer, IIT Bombay)", "speaker_id": "co-host"},
+      {"name": "Ariana", "role": "Co-host (AI engineer, IIT Madras)", "speaker_id": "co-host"},
+      {"name": "Gaurav (co-host)", "role": "AI engineer", "speaker_id": "co-host"},
+      {"name": "Sandeep", "role": "Student", "speaker_id": 16},
+      {"name": "Shubham", "role": "Student", "speaker_id": 4},
+      {"name": "Raman", "role": "Student", "speaker_id": 10},
+      {"name": "Kevin", "role": "Student", "speaker_id": 3},
+      {"name": "Deeksha", "role": "Student", "speaker_id": 5},
+      {"name": "Yogesh", "role": "Student", "speaker_id": null},
+      {"name": "Ravi Kiran", "role": "Student", "speaker_id": null},
+      {"name": "Madhu", "role": "Student", "speaker_id": null}
+    ],
+    "datasets": ["FineWeb2", "BigCode", "SWE-rebench", "NASA corpus", "Google private datasets"],
+    "models_referenced": ["GPT-2", "DeepSeek", "Llama-series"],
+    "vendors_mentioned": ["DeepSeek", "Google", "OpenAI"]
+  }
+}
