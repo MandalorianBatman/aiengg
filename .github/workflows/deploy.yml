@@ -1,0 +1,61 @@
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  pull_request:
+    types: [labeled]
+    branches: [main]
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: deploy (self-hosted)
+    runs-on: [self-hosted, aiengg, linux, x64]
+    environment: production
+    if: |
+      github.event_name == 'push' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'deploy'))
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Sync deploy dir with ref
+        run: |
+          DEPLOY_DIR=/home/zed/dev/ci-cd/aiengg
+          DEPLOY_CI_HOME=$(mktemp -d)
+          export GIT_CONFIG_GLOBAL="$DEPLOY_CI_HOME/gitconfig"
+          git config --global "url.https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/.insteadOf" https://github.com/
+          mkdir -p "$(dirname "$DEPLOY_DIR")"
+          if [ ! -d "$DEPLOY_DIR/.git" ]; then
+            git clone "${{ github.server_url }}/${{ github.repository }}.git" "$DEPLOY_DIR"
+          fi
+          cd "$DEPLOY_DIR"
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            DEPLOY_REF="refs/pull/${{ github.event.pull_request.number }}/head"
+          else
+            DEPLOY_REF="${{ github.ref }}"
+          fi
+          echo "Syncing deploy dir with $DEPLOY_REF"
+          git fetch origin "$DEPLOY_REF"
+          git reset --hard FETCH_HEAD
+          rm -rf "$DEPLOY_CI_HOME"
+
+      - name: Pull image
+        env:
+          IMAGE: ghcr.io/mandalorianbatman/aiengg-docsify:${{ github.sha }}
+        run: docker pull "$IMAGE"
+
+      - name: Run deploy
+        env:
+          IMAGE: ghcr.io/mandalorianbatman/aiengg-docsify:${{ github.sha }}
+          SKIP_GIT_SYNC: "true"
+        run: /home/zed/dev/ci-cd/aiengg/scripts/deploy.sh
+
+      - name: Prune dangling images
+        if: always()
+        run: docker image prune -f

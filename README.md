@@ -6,7 +6,7 @@ Serves the AI Engineering knowledge base as a docsify site, exposed over Tailsca
 
 ## URL
 
-**Tailnet (private):** https://omarchy.barbel-polaris.ts.net/
+**Tailnet (private):** https://aiengg.kasat.xyz
 
 ## Structure
 

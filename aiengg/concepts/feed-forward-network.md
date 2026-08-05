@@ -18,7 +18,8 @@ If attention is like asking your teammates for their notes (cross-referencing), 
 
 ## Mentioned In
 
-[LLM Basics & Transformer Internals](../sessions/llm-basics-transformer-internals.md)
+- [LLM Basics & Transformer Internals](../sessions/llm-basics-transformer-internals.md)
+- [Week 1 Networking — Doubt-Solving](../sessions/doubts-networking-week-1.md)
 
 ## Related Concepts
 

@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: build (docsify image)
+    runs-on: [self-hosted, aiengg, linux, x64]
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v5
+      - name: Login to GHCR
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: ./docker
+          push: true
+          tags: |
+            ghcr.io/mandalorianbatman/aiengg-docsify:${{ github.sha }}
+            ghcr.io/mandalorianbatman/aiengg-docsify:latest
+          cache-from: type=registry,ref=ghcr.io/mandalorianbatman/aiengg-docsify:buildcache
+          cache-to: type=registry,ref=ghcr.io/mandalorianbatman/aiengg-docsify:buildcache,mode=max

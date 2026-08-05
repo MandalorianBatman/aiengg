@@ -20,7 +20,8 @@ Pre-training gives you a brilliant PhD graduate who's read everything. SFT is li
 
 ## Mentioned In
 
-[Training Pipeline & Tool Use](../sessions/llm-training-pipeline-tool-use.md), [Training Pipeline & Tool Use](../sessions/llm-training-pipeline-tool-use.md)
+- [Training Pipeline & Tool Use](../sessions/llm-training-pipeline-tool-use.md)
+- [Week 1 Networking — Doubt-Solving](../sessions/doubts-networking-week-1.md)
 
 ## Related Concepts
 

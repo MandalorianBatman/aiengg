@@ -16,7 +16,9 @@ An LLM is like an extremely well-read friend who, when you hand them a partially
 
 ## Mentioned In
 
-[LLM Basics & Transformer Internals](../sessions/llm-basics-transformer-internals.md)
+- [LLM Basics & Transformer Internals](../sessions/llm-basics-transformer-internals.md)
+- [Training Pipeline & Tool Use](../sessions/llm-training-pipeline-tool-use.md)
+- [Week 1 Networking — Doubt-Solving](../sessions/doubts-networking-week-1.md)
 
 ## Related Concepts
 

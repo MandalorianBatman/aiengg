@@ -1,0 +1,270 @@
+{
+  "source": "networking-session-1.srt",
+  "title": "Week 1 Networking — Doubt-Solving Session",
+  "slug": "doubts-networking-week-1",
+  "type": "doubt-solving",
+  "companion_to": ["recording-51.srt", "recording-52.srt"],
+  "host": {
+    "primary_host": "Gaurav Sen (Speaker 7)",
+    "co_instructors": [
+      {"name": "Tanishk (Speaker 1)", "role": "main voice answering technical Qs"},
+      {"name": "Tanishq (Speaker 4)", "role": "screen-share technical demos (BERT attention visualiser)"}
+    ]
+  },
+  "duration": "01:42:01",
+  "speaker_count": 18,
+  "segment_count": 1339,
+  "cohort": "AI Engineering Cohort (InterviewReady / Gaurav Sen)",
+  "session_goals": [
+    "Collect week-one feedback from the cohort and clarify course logistics (capstone, labs, API keys)",
+    "Walk through the most upvoted week-one doubts one by one (transformer internals: Q/K/V, embeddings, FFN, KV cache)",
+    "Answer career-shaped questions: depth needed for AI-engineering roles, recruiter signals, and how image models relate to LLMs"
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "asker": "Nihar",
+      "topic": "Hands-on math walkthrough",
+      "summary": "Hands-on math example with a 10-token vocabulary: step-by-step walkthrough of next-token prediction, attention, and FFN.",
+      "concepts": ["attention", "next-token-prediction"],
+      "answer_summary": "Worked examples exist in the cohort notes (BERT-style attention visualiser). One-on-one walkthrough in the chat if needed."
+    },
+    {
+      "id": "Q2",
+      "asker": "Abhishek (Speaker 8)",
+      "topic": "Encoder vs Decoder at inference",
+      "summary": "Is the encoder only used during training, or also at inference? When is the encoder needed?",
+      "concepts": ["transformer", "encoder-decoder", "decoder-only"],
+      "answer_summary": "Modern (GPT-style) LLMs are decoder-only — no encoder at all. Encoder-only (BERT) is used for embedding models in RAG. Encoder-decoder (Vaswani 2017) uses encoder for K/V at every call (training or inference)."
+    },
+    {
+      "id": "Q3",
+      "asker": "Abhisit / Abhishek",
+      "topic": "Where embeddings are stored",
+      "summary": "Where are embedding vectors physically stored? What is the 'clustering' mechanism? Is it a vector DB?",
+      "concepts": ["vector-embedding", "rag", "model-parameters"],
+      "answer_summary": "Embeddings live inside the model weights as rows of the |V| × D matrix. Not in a separate DB at inference time. The vector-DB association comes from RAG (a separate concept)."
+    },
+    {
+      "id": "Q4",
+      "asker": "Navdas",
+      "topic": "Embedding dimensions (why 768)",
+      "summary": "Why 768 dimensions? How is the dimension chosen, and how are individual embedding values computed?",
+      "concepts": ["model-parameters", "vector-embedding"],
+      "answer_summary": "D is an architectural hyperparameter (768 / 1024 / 4096 / 8192). Float values come from random init + gradient descent; frozen after pre-training."
+    },
+    {
+      "id": "Q5",
+      "asker": "Speaker 12",
+      "topic": "Embeddings & weights updated in backprop",
+      "summary": "When a token is wrongly predicted, backprop updates Q/K/V. Does it also update the token-to-vector mapping (embeddings)?",
+      "concepts": ["pre-training", "training-loop", "cross-entropy-loss"],
+      "answer_summary": "Backprop updates everything learnable — embeddings, Q/K/V, FFN. The distinction is learnable (weights) vs not-learnable (tokenizer rules). Position embeddings can be fixed or learnable by design."
+    },
+    {
+      "id": "Q6",
+      "asker": "Speaker 3",
+      "topic": "Hallucination on unknown tokens",
+      "summary": "If a token wasn't in training, does the model learn it, decompose it, or hallucinate?",
+      "concepts": ["byte-pair-encoding", "hallucination", "token"],
+      "answer_summary": "The model cannot learn at inference. BPE tokenizers decompose into known subwords; the LLM makes best-guess answers = hallucination. RAG and fine-tuning reduce but don't eliminate."
+    },
+    {
+      "id": "Q7",
+      "asker": "Deeksha (Speaker 9)",
+      "topic": "QKV matrix computation",
+      "summary": "How are Q, K, V computed from the input embedding matrix? How is the projection matrix W derived?",
+      "concepts": ["attention", "linear-layer"],
+      "answer_summary": "Q, K, V = X · W_Q, X · W_K, X · W_V. The W matrices are learnable (random init, trained by gradient descent). Math is in the cohort notes."
+    },
+    {
+      "id": "Q8",
+      "asker": "Panush (Speaker 15)",
+      "topic": "KV cache vs QKV",
+      "summary": "Is KV cache the same as QKV, or something different? Will it be covered later?",
+      "concepts": ["kv-cache", "attention"],
+      "answer_summary": "KV cache holds previously-computed K, V across generation steps. Q is recomputed each step. Same K/V from the attention computation, cached for efficiency."
+    },
+    {
+      "id": "Q9",
+      "asker": "Cohort sheet",
+      "topic": "FFN dimension expansion",
+      "summary": "FFN transforms to more 'relatable' dimensions. How are those dimensions calculated?",
+      "concepts": ["feed-forward-network", "model-parameters"],
+      "answer_summary": "FFN expands D to 4D (typical), applies non-linear activation, projects back to D. 4× is a design heuristic from Vaswani 2017; not derived from first principles."
+    },
+    {
+      "id": "Q10",
+      "asker": "Sridhar (Speaker 14)",
+      "topic": "FDE role readiness after cohort",
+      "summary": "Will completing the cohort enable applying for Forward-Deployed Engineer roles, or only contribute to internal projects?",
+      "concepts": [],
+      "answer_summary": "Both. Fundamentals cover both interview readiness and production system-building. Past cohorts produced both job-switchers and internal-project builders."
+    },
+    {
+      "id": "Q11",
+      "asker": "Sridhar",
+      "topic": "EVALs and Guardrails depth",
+      "summary": "Will EVAL coverage be low-level example or high-level explanation? Will it cover RAG and agent fine-tuning?",
+      "concepts": ["preference-optimization"],
+      "answer_summary": "Architecturally agnostic, metric-driven. Specific metrics for RAG, agents, multi-agents — applicable regardless of underlying stack."
+    },
+    {
+      "id": "Q12",
+      "asker": "Collier Blake (Speaker 13, JP Morgan)",
+      "topic": "Recruiter signals + remote AI jobs",
+      "summary": "What signals should I create to get noticed by AI recruiters, and which platform to use?",
+      "concepts": [],
+      "answer_summary": "Personal brand via published artifacts (blogs, open-source repos) is the highest-leverage signal. Specific platform matters less than connecting with the right people."
+    },
+    {
+      "id": "Q13",
+      "asker": "Poorna",
+      "topic": "Transformer depth needed for AI engineers",
+      "summary": "How much transformer depth do AI engineers need? Do teams implement this in production (agents, RAG)?",
+      "concepts": [],
+      "answer_summary": "Basic attention understanding is beyond what's required. Production AI engineering is mostly system-building around API LLMs (RAG, agents, evals, orchestration). Multi-agents are emerging but not widely deployed."
+    },
+    {
+      "id": "Q14",
+      "asker": "Abhishek (Speaker 8)",
+      "topic": "Retraining between model versions",
+      "summary": "When OpenAI upgrades GPT-3.5 → GPT-5, do they train from scratch or extend?",
+      "concepts": ["supervised-fine-tuning", "pre-training", "inference-vs-training"],
+      "answer_summary": "Labs do not retrain from scratch (cost prohibitive). They run a post-training cycle (SFT + preference opt) on new data. Pre-training = language; post-training = conversation / instruction-following."
+    },
+    {
+      "id": "Q15",
+      "asker": "Manasi",
+      "topic": "Post-training vs Validation",
+      "summary": "Are post-training and validation the same thing?",
+      "concepts": ["pre-training", "training-loop"],
+      "answer_summary": "No. Validation = held-out data split. Post-training = second training stage (SFT + preference opt). Different concepts at different pipeline stages."
+    },
+    {
+      "id": "Q16",
+      "asker": "Speaker 11 (data-eng background)",
+      "topic": "Orchestration: Spark vs GPU",
+      "summary": "Is Spark used to orchestrate model training? How does that relate to training infra?",
+      "concepts": ["data-pipeline", "gpu-orchestration"],
+      "answer_summary": "Two types of orchestration: (1) data pre-processing — Spark/Beam/Ray for scraping/curing/PII-stripping; (2) GPU / training orchestration — distributing a single training run across thousands of GPUs (its own full topic)."
+    },
+    {
+      "id": "Q17",
+      "asker": "Sid",
+      "topic": "Diffusion models vs LLMs (ComfyUI)",
+      "summary": "How similar are diffusion models (ComfyUI) to LLMs? Is attention the same? Can we mix components like DeepSeek tokenizer + Gemma attention?",
+      "concepts": ["transformer", "lora", "vocabulary"],
+      "answer_summary": "Same transformer backbone + attention. Differ in inputs (text vs image latents) and outputs (next-token vs denoise). LoRA works for both but with different mechanics. Mixing tokenizer + attention across models does not work — embeddings are aligned with K/V."
+    },
+    {
+      "id": "Q18",
+      "asker": "Ayush (Speaker 6)",
+      "topic": "How LLMs adapt to preferences at inference",
+      "summary": "When an LLM complies with 'don't use emojis' mid-conversation, is something being penalised under the hood?",
+      "concepts": ["context-window", "model-serving", "tool-calling"],
+      "answer_summary": "No inference-time fine-tuning. Either: (1) it's an agent with external memory (CLAUDE.md, project skills) re-injected every call, or (2) prior chat messages stay in context window."
+    },
+    {
+      "id": "Q19",
+      "asker": "Ayush",
+      "topic": "Mind-mapping week-1 lecture",
+      "summary": "Best way to connect the dots from the week-1 lectures into a single mind-map?",
+      "concepts": [],
+      "answer_summary": "Curated resources → structured prompt to Claude (or similar) → 2-3 iteration cycles → tighten sections. Excalidraw MCP for visual diagrams."
+    }
+  ],
+  "concepts": [
+    {"id": "transformer_arch", "name": "Transformer architecture (encoder-only vs decoder-only vs encoder-decoder)", "definition": "The transformer is the backbone of all modern LLMs. Modern LLMs use only the decoder half; encoder-only models like BERT are used for embeddings; the original encoder-decoder was designed for sequence-to-sequence tasks like machine translation.", "category": "architecture", "concept_page": "../concepts/transformer.md"},
+    {"id": "embeddings_storage", "name": "Embeddings storage (weights vs vector DB)", "definition": "LLM embeddings live inside the model weights as rows of a |V| × D matrix — not in a separate vector DB. Vector DBs are a separate concept used in RAG to store external document embeddings.", "category": "architecture", "concept_page": "../concepts/vector-embedding.md"},
+    {"id": "embedding_dimensions", "name": "Embedding dimension D (hyperparameter)", "definition": "The hidden dimension D (e.g. 768, 1024, 4096, 8192) is an architectural choice set at design time. It dominates the parameter count of the embedding table and FFN expansion.", "category": "hyperparameter", "concept_page": "../concepts/model-parameters.md"},
+    {"id": "ffn_expansion", "name": "Feed-forward network (D → 4D → D)", "definition": "The FFN block expands the embedding dimension by 4×, applies a non-linear activation (ReLU/SwiGLU), then projects back to D. Activation is what gives FFN representational power.", "category": "architecture", "concept_page": "../concepts/feed-forward-network.md"},
+    {"id": "attention_projections", "name": "Q, K, V from input via learned projections", "definition": "Q, K, V are linear projections Q = X·W_Q, K = X·W_K, V = X·W_V. The W matrices are learnable parameters, randomly initialized and trained by gradient descent.", "category": "mechanism", "concept_page": "../concepts/attention.md"},
+    {"id": "kv_cache_rel", "name": "KV cache as inference optimization", "definition": "The KV cache stores the K and V tensors computed for prior tokens across generation steps. Q is recomputed each step. Without the cache, each new token would re-encode all prior tokens.", "category": "optimization", "concept_page": "../concepts/kv-cache.md"},
+    {"id": "learnable_vs_frozen", "name": "Learnable vs frozen parameters in training", "definition": "During training backprop updates all learnable parameters (weights, biases, embeddings, Q/K/V matrices). Tokenizer rules (BPE merges, token-ID mapping) are computed once and frozen.", "category": "training-stage", "concept_page": "../concepts/training-loop.md"},
+    {"id": "hallucination_bpe", "name": "Hallucination via BPE decomposition", "definition": "When an unknown word is given at inference, the BPE tokenizer decomposes it into known subwords. The LLM produces a best-guess answer = hallucination. Reduced by RAG (more context), fine-tuning (baked corrections), or tool calling (external lookup).", "category": "capability", "concept_page": "../concepts/byte-pair-encoding.md"},
+    {"id": "pre_vs_post_training", "name": "Pre-training vs post-training", "definition": "Pre-training = next-token prediction on huge corpus. Post-training = SFT (instruction-following) + preference optimization (RLHF/DPO/GRPO). Both update weights; both are training.", "category": "training-stage", "concept_page": "../concepts/pre-training.md"},
+    {"id": "validation_split", "name": "Validation = held-out data split, NOT post-training", "definition": "Validation is the practice of holding out a fraction of training data (10-20%) to estimate generalization. It is not a separate training phase.", "category": "training-stage", "concept_page": "../concepts/training-loop.md"},
+    {"id": "inference_vs_post_training", "name": "Inference is not a training phase", "definition": "Inference is a forward pass through a frozen model. Post-training is a separate training phase. Models do not learn at inference; agent layers (memory, skills, RAG) feed context but do not modify model weights.", "category": "training-stage", "concept_page": "../concepts/pre-training.md"},
+    {"id": "data_vs_gpu_orchestration", "name": "Two kinds of orchestration", "definition": "Data orchestration (Spark/Beam) for pre-training data pipeline. GPU orchestration (Megatron, GPipe) for distributing a single training run across many GPUs.", "category": "industry-trend", "concept_page": "../concepts/gpu-orchestration.md"},
+    {"id": "diffusion_vs_llm", "name": "Diffusion models share transformer backbone with LLMs", "definition": "Image diffusion models (Stable Diffusion, Flux) use the same transformer + attention architecture as LLMs. Inputs are image patches or VAE latents instead of text tokens; outputs are iteratively-denoised images instead of next-token.", "category": "architecture", "concept_page": "../concepts/transformer.md"},
+    {"id": "lora_cross_modality", "name": "LoRA for LLMs and image models", "definition": "LoRA (low-rank adaptation) is a technique to fine-tune a frozen base model by training a small adapter. Used in diffusion for character/style LoRAs; used in LLMs for domain fine-tuning. Different mechanics per modality.", "category": "optimization", "concept_page": "../concepts/supervised-fine-tuning.md"},
+    {"id": "evals_metric_driven", "name": "Evals as metric-driven QA", "definition": "Modern evaluation suites (RAGAS, DeepEval, Phoenix) define specific metrics: faithfulness, answer relevancy, context precision/recall, tool-call accuracy. Stack-agnostic.", "category": "industry-trend", "concept_page": "../concepts/preference-optimization.md"},
+    {"id": "career_signals", "name": "Career signals for AI engineers", "definition": "Highest-leverage recruiter signals are personal brand via published artifacts (weekly blog posts distilling learnings, open-source repos with thoughtful READMEs), not any specific platform.", "category": "industry-trend", "concept_page": null},
+    {"id": "ai_engineering_depth", "name": "AI engineering depth calibration", "definition": "For most AI engineering roles, system-level depth (RAG, agents, evals, orchestration around an API-hosted LLM) matters more than frontier-lab ML depth (rewriting attention math, training from scratch).", "category": "industry-trend", "concept_page": null},
+    {"id": "agent_memory_layer", "name": "Agents maintain external memory", "definition": "Modern LLM apps (ChatGPT, Claude) are agent systems with external memory (CLAUDE.md, project skills, user-level preferences) that re-feed context on every call. Not 'learning at inference' — application-layer memory.", "category": "capability", "concept_page": "../concepts/tool-calling.md"}
+  ],
+  "qa_themes": [
+    {"theme": "Encoder vs decoder at inference (modern LLMs are decoder-only)", "answer": "Encoder-decoder was for original transformer; modern LLMs only use the decoder; encoder-only used for embeddings in RAG."},
+    {"theme": "Embeddings are weights, not a vector DB", "answer": "They are rows of the |V| × D matrix inside the model weights. Vector DB confusion comes from RAG (a separate concept)."},
+    {"theme": "Backprop updates everything learnable, including embeddings", "answer": "Embeddings, Q/K/V, FFN are all updated; tokenizer rules are frozen."},
+    {"theme": "KV cache is a per-step optimization caching K, V", "answer": "Q is recomputed each step; K and V are cached from prior steps to avoid re-encoding."},
+    {"theme": "Hallucination = best-guess from subwords", "answer": "BPE decomposes unknown words; LLM synthesizes an answer from known sub-pieces; this is structurally hallucination."},
+    {"theme": "Pre-training vs post-training vs validation", "answer": "Pre-training teaches language; post-training teaches conversation/instruction-following; validation is a held-out data split, NOT a training phase."},
+    {"theme": "Career & role calibration", "answer": "System-level depth (RAG/agents/evals) > transformer internals depth for AI-engineering roles. Portfolio artifacts are the highest-leverage recruiter signal."},
+    {"theme": "Diffusion models and LLMs are architectural cousins", "answer": "Same transformer backbone; differ in modality (image vs text) and output (denoise vs next-token). LoRA works for both but differently."}
+  ],
+  "homework": [
+    "Read the QKV math notes (worked example for W_Q, W_K, W_V on a real sentence) before next session",
+    "Send persistent questions to the cohort sheet for next networking call",
+    "Watch for the upcoming fine-tuning lecture (Saturday/Sunday) covering embedding updates, new-token handling, post-training"
+  ],
+  "key_takeaways": [
+    "Modern LLMs are decoder-only; encoder-only lives on as embedding backbones for RAG.",
+    "Embeddings live inside model weights, NOT in a vector DB (vector-DB confusion comes from RAG).",
+    "Backprop updates everything learnable: embeddings, Q/K/V, FFN. Tokenizer rules are not learnable.",
+    "KV cache ≠ QKV. It is an inference-time optimization caching K/V across generation steps.",
+    "Hallucination is structural, not a bug: BPE + best-guess + no real-time learning.",
+    "Pre-training + post-training are both training. Validation is a held-out data split, not a training phase.",
+    "For AI engineering roles, system-level depth (RAG, agents, evals) > transformer internals depth.",
+    "Personal brand via published artifacts (blogs, open-source repos) is the highest-leverage recruiter signal.",
+    "Diffusion models and LLMs share the transformer backbone; difference is modality.",
+    "Cannot fine-tune at inference — anything that 'remembers' preferences is an agent layer feeding context."
+  ],
+  "entities": {
+    "people": [
+      {"name": "Gaurav Sen", "role": "Host (Speaker 7)", "speaker_id": 7, "background": "Founding AI Engineering cohort instructor, ex-InternetRadio host"},
+      {"name": "Tanishk", "role": "Co-instructor (Speaker 1)", "speaker_id": 1, "background": "Main voice answering technical Qs"},
+      {"name": "Tanishq", "role": "Co-instructor (Speaker 4)", "speaker_id": 4, "background": "Screen-share demos (BERT attention visualiser)"},
+      {"name": "Abhishek", "role": "Student (Speaker 8)", "speaker_id": 8},
+      {"name": "Abhisit", "role": "Student (Speaker 9)", "speaker_id": 9, "notes": "Complete beginner in AI"},
+      {"name": "Deeksha", "role": "Student (Speaker 9 alt)", "speaker_id": 9},
+      {"name": "Panush", "role": "Student (Speaker 15)", "speaker_id": 15},
+      {"name": "Navdas", "role": "Student", "speaker_id": null},
+      {"name": "Nihar", "role": "Student", "speaker_id": null, "notes": "Brought the hands-on math walkthrough question"},
+      {"name": "Sridhar", "role": "Student (Speaker 14)", "speaker_id": 14},
+      {"name": "Manasi", "role": "Student", "speaker_id": null},
+      {"name": "Poorna", "role": "Student", "speaker_id": null},
+      {"name": "Collier Blake", "role": "Student (Speaker 13)", "speaker_id": 13, "background": "Full-stack developer at JP Morgan Chase; pursuing remote AI roles"},
+      {"name": "Sid", "role": "Student (Speaker 0)", "speaker_id": 0, "background": "Works with ComfyUI for image generation"},
+      {"name": "Arun", "role": "Student / expert guest (Speaker 17)", "speaker_id": 17, "background": "Power user of ComfyUI and diffusion models"},
+      {"name": "Ayush", "role": "Student (Speaker 6)", "speaker_id": 6},
+      {"name": "Sandeep", "role": "Student (Speaker 2)", "speaker_id": 2}
+    ],
+    "datasets": [
+      {"name": "BERT training data", "purpose": "Used for the attention visualiser demo"}
+    ],
+    "papers": [
+      {"title": "Attention Is All You Need", "authors": "Vaswani et al.", "year": 2017, "topic": "Original transformer architecture; FFN 4D expansion convention"},
+      {"title": "Word2Vec", "authors": "Mikolov et al.", "year": 2013, "topic": "Embeddings as clusterable semantic vectors"},
+      {"title": "BPE", "authors": "Sennrich et al.", "year": 2016, "topic": "Subword tokenization for OOV handling"},
+      {"title": "Latent Diffusion", "authors": "Rombach et al.", "year": 2021, "topic": "Diffusion models in latent space (Stable Diffusion)"},
+      {"title": "LoRA", "authors": "Hu et al.", "year": 2021, "topic": "Low-rank adaptation for fine-tuning"},
+      {"title": "InstructGPT", "authors": "Ouyang et al.", "year": 2022, "topic": "Post-training via instruction-following (RLHF pipeline)"}
+    ],
+    "models_referenced": [
+      "BERT (encoder-only; used for embedding models)",
+      "GPT-3.5 / GPT-5 (OpenAI example for retraining-between-versions question)",
+      "DeepSeek (tokenizer used in the mix-and-match question)",
+      "Gemma (attention block used in the mix-and-match question)",
+      "Flux / Flux Dev (open-source diffusion, used in ComfyUI)",
+      "nano banana (Google's Gemini image model, mentioned by Arun)"
+    ],
+    "vendors_mentioned": [
+      "OpenAI",
+      "Google / Gemini",
+      "ComfyUI (open-source diffusion framework)",
+      "Anthropic Claude (recommended for the mind-mapping prompt workflow)"
+    ]
+  }
+}
