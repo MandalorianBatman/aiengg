@@ -6,7 +6,7 @@ services:
     expose:
       - "3000"
     volumes:
-      - /home/zed/dev/ci-cd/aiengg/docs:/docs:ro
+      - /home/zed/dev/ci-cd/aiengg/aiengg:/docs:ro
     healthcheck:
       test: ["CMD-SHELL", "wget -q -O- http://127.0.0.1:3000/ >/dev/null"]
       interval: 30s
