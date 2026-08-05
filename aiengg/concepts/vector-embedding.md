@@ -21,6 +21,12 @@ Embeddings are how LLMs represent meaning mathematically. Words that are semanti
 
 Imagine a map where every word is a city. "King" and "Queen" are close together (royalty region). "Paris" and "France" are nearby (geography region). But the trick is: king − man + woman ≈ queen. The directions *between* cities encode relationships. An embedding space works the same way: the vector difference captures meaning.
 
+## Lecture's take
+
+**From [Session 1](../sessions/1-llm-basics.md):**
+
+> A coordinate in a multi-dimensional space assigned to each token. Common dimensions: **768, 8192**. Each dimension is conceptually a "feature" the model has learned (e.g., "how south is this city from Delhi"). In reality, the model is just predicting the next token — we don't know what each dimension truly represents.
+
 ## Mentioned In
 
 - [LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)

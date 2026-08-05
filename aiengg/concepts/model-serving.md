@@ -35,6 +35,12 @@ graph LR
     LB --> User2
 ```
 
+## Lecture's take
+
+**From [Session 2](../sessions/2-training-pipeline.md):**
+
+> (paraphrased from the serving discussion) Inference is frozen-weights-only; the same set of weights is queried for every user request.
+
 ## Mentioned In
 
 [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)

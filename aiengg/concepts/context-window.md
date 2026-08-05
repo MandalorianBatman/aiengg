@@ -21,6 +21,12 @@ Context window is the defining constraint for LLM applications. It determines ho
 
 A context window is like the size of your desk. A small desk = you can only work with a few pages at once. A huge desk = you can spread out an entire book, but it costs more (bigger room, more lights). KV cache is like keeping your place with sticky notes so you don't have to re-read everything each time you add a new page.
 
+## Lecture's take
+
+**From [Session 1](../sessions/1-llm-basics.md):**
+
+> The number of tokens the model can attend to. **1M context ≠ 1M tokens of info** — every token gets context from the remaining 1M tokens, and this happens 1M times. Dramatic compute cost.
+
 ## Mentioned In
 
 - [LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)

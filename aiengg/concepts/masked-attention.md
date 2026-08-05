@@ -33,6 +33,12 @@ graph TD
     P4 --> M3[Mask: only see 1-3]
 ```
 
+## Lecture's take
+
+**From [Session 1](../sessions/1-llm-basics.md):**
+
+> The upper triangle of the similarity matrix is masked — tokens can't look ahead. **Why?** Because masking turns one sentence into **N training pairs** (one per token), not just one. With N tokens, you get N predictions and N places to compute loss.
+
 ## Mentioned In
 
 [LLM Basics & Transformer Internals](../sessions/1-llm-basics.md), [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)

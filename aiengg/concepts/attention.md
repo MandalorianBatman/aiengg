@@ -42,6 +42,16 @@ graph LR
     end
 ```
 
+## Lecture's take
+
+**From [Session 1](../sessions/1-llm-basics.md):**
+
+> Each token looks at every other token, computes similarity scores, and gets **pushed in the right direction**. Ambiguous vectors become **contextualized vectors** — they now know the context they're in. > *"Before this, plant just knew that I'm plant. But it didn't know whether I'm the organism or the factory because it had not looked at the nearby words."*
+
+**From [Session 1](../sessions/1-llm-basics.md):**
+
+> Multiple attention heads run in parallel, each learning different relationships (e.g., one head for grammar, another for topical relevance).
+
 ## Mentioned In
 
 - [LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)

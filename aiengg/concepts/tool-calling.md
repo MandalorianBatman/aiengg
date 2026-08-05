@@ -39,6 +39,12 @@ sequenceDiagram
     LLM->>User: It is currently 9:35 AM.
 ```
 
+## Lecture's take
+
+**From [Session 2](../sessions/2-training-pipeline.md):**
+
+> **LLMs cannot actually make function calls.** They only output tokens. Fine-tuning teaches the model to emit a textual template (e.g., `time = [calendar][get_current_time][result]`). The server-side parses this, executes the function, and appends the result back into the prompt. The model then continues generating based on the result. ``` User → LLM: "What is the time?" LLM → Server: template tokens "time = [calendar][get_current_time][result]" Server → Tool API: get_current_time() API → Server: 9:35 AM Server → LLM: append result to prompt LLM → User: "The time is 9:35 AM" ```
+
 ## Mentioned In
 
 - [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)

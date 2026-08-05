@@ -21,6 +21,12 @@ KV cache is what makes LLM inference practical. Without it, generating a 100-tok
 
 KV cache is like pre-computed answers in a textbook. If you're solving math problems and the book already shows that 7×8=56 in the margin, you don't recompute it every time a problem uses 7×8. You just look it up. The cache stores these 'lookups' — trading memory for speed.
 
+## Lecture's take
+
+**From [Session 1](../sessions/1-llm-basics.md):**
+
+> Memoization of Key and Value vectors for previously-seen tokens. Avoids recomputing the entire N × N similarity matrix on every new token. **Memory-expensive but worth it.**
+
 ## Mentioned In
 
 - [LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)

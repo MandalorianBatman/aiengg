@@ -21,6 +21,12 @@ GPU orchestration is what makes large models possible. A 70B parameter model in 
 
 GPU orchestration is like an assembly line. One worker (GPU) can't build a car alone — it won't fit in their workspace. So the car chassis moves from station to station: Station 1 installs the engine (layers 1-10), Station 2 adds the body (layers 11-20), Station 3 does the interior (layers 21-32). Each station only needs to know its own part.
 
+## Lecture's take
+
+**From [Session 2](../sessions/2-training-pipeline.md):**
+
+> When a model is too large for one GPU, split it across GPUs by layer. An orchestrator passes data between GPUs, layer by layer.
+
 ## Mentioned In
 
 - [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)

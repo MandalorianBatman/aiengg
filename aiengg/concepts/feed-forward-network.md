@@ -21,6 +21,12 @@ Attention mixes information *between* tokens. The FFN processes each token *indi
 
 If attention is like asking your teammates for their notes (cross-referencing), the FFN is like sitting alone and deriving insights from the notes you now have — transforming raw data into useful abstractions.
 
+## Lecture's take
+
+**From [Session 1](../sessions/1-llm-basics.md):**
+
+> A per-token block that maps 8192-D → 8192-D but with transformed values. **Analogy:** Just like deriving "area" from "length × breadth" or "ratio" from "length / breadth", the FFN builds new features from old ones. > *"These don't have new information. They are just a transformation, a mapping of our existing features into more useful features."*
+
 ## Mentioned In
 
 - [LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)

@@ -21,6 +21,12 @@ BPE is the most common tokenization algorithm used by modern LLMs (GPT, Llama, e
 
 Think of BPE like a compression algorithm for language. Instead of storing every word ("running", "runs", "run") separately, it learns common pieces ("run", "ning", "s"). This way it can represent any word, even ones it's never seen before, from known pieces.
 
+## Lecture's take
+
+**From [Session 1](../sessions/1-llm-basics.md):**
+
+> A greedy compression-style algorithm. Start with a base alphabet (characters or bytes), repeatedly merge the most frequent adjacent pair, and stop when the vocabulary hits a target size. The lecture does not run through the algorithm in detail — it is named and used as the canonical example of a tokenizer.
+
 ## Mentioned In
 
 - [LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)

@@ -19,6 +19,12 @@ Vocabulary size is a key hyperparameter with real cost implications. The final l
 
 Vocabulary size is like the number of keys on a keyboard. More keys = more expressive (you can type in more languages) but the keyboard is bigger and harder to carry. Too few keys = you need multiple keystrokes per character (like old SMS texting).
 
+## Lecture's take
+
+**From [Session 1](../sessions/1-llm-basics.md):**
+
+> The set of tokens the model knows. Output distribution has one probability per vocabulary token. Smaller vocab = cheaper output layer.
+
 ## Mentioned In
 
 - [LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)

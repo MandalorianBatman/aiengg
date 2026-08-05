@@ -42,6 +42,28 @@ graph TD
     Opt -->|GRPO| Group[Group comparison<br/>Relative ranking]
 ```
 
+## Lecture's take
+
+**From [Session 2](../sessions/2-training-pipeline.md):**
+
+> Sigmoid is a teaching anchor used in the preference-optimization section (NOT in the cross-entropy discussion — the placement in earlier versions of these notes was incorrect). Sigmoid(20) ≈ 1 and sigmoid(-20) ≈ 0. The lecture later notes that "sigmoid is no longer used" in production preference-optimization algorithms — it's just for ease of understanding.
+
+**From [Session 2](../sessions/2-training-pipeline.md):**
+
+> Modern RLHF-family algorithms refine the model's behaviour using human preference signals. The lecture surveys three variants: GRPO, DPO, PPO.
+
+**From [Session 2](../sessions/2-training-pipeline.md):**
+
+> In R52 the instructor misspoke PPO as "Proximal Preference Optimization" — the canonical name is **Proximal Policy Optimization** (Schulman et al., 2017). PPO was the original RL algorithm used for RLHF in InstructGPT.
+
+**From [Session 2](../sessions/2-training-pipeline.md):**
+
+> Direct preference pair training. DPO trains the model directly on `(preferred, rejected)` pairs without a separate reward model.
+
+**From [Session 2](../sessions/2-training-pipeline.md):**
+
+> The lecture names GRPO as the modern preference-optimization algorithm popularised by DeepSeek for math and code. Note: the lecture called it "Group Relative Preference Optimization" — the canonical DeepSeekMath paper defines it as **Group Relative Policy Optimization** (Policy, not Preference).
+
 ## Mentioned In
 
 - [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)

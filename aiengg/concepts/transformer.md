@@ -38,6 +38,12 @@ graph TD
     Output -->|Next Layer| Norm1
 ```
 
+## Lecture's take
+
+**From [Session 1](../sessions/1-llm-basics.md):**
+
+> The internal architecture of an LLM. The lecture walks through it block by block rather than defining it up front.
+
 ## Mentioned In
 
 - [LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)

@@ -21,6 +21,12 @@ Data shortage is reshaping the economics of AI. The next frontier isn't better a
 
 Pre-training is like a library. For years, models could browse new shelves (public data). Now they've read almost everything. The next phase is either writing new books themselves (synthetic data) or finding new libraries (private data, video transcripts, robot interactions).
 
+## Lecture's take
+
+**From [Session 2](../sessions/2-training-pipeline.md):**
+
+> Not asserted in R52 — earlier versions of these notes added it as a takeaway. The "running out of public training data" framing is current industry knowledge (Epoch AI, 2024), not part of the lecture. Listed here for completeness and linked to the source.
+
 ## Mentioned In
 
 [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)

@@ -23,6 +23,12 @@ Loss is the signal that drives all learning. Every weight update during training
 
 Cross-entropy loss is like a strict teacher grading your exam. If you say 'I'm 100% sure the answer is Paris' and it IS Paris → perfect score. If you say 'I'm 100% sure it's London' but the answer is Paris → you fail catastrophically. The loss penalizes confidence in wrong answers much more than uncertainty.
 
+## Lecture's take
+
+**From [Session 2](../sessions/2-training-pipeline.md):**
+
+> The loss function is "log of expected token output probability plus sum of log one minus all other token probabilities" (verbatim from the transcript, which omits leading negatives in the sum). The notes express the same idea as `loss = -log(p_expected) + Σ(-log(1-p_other))`. The standard formulation collapses to just `-log(p_correct)` for a one-hot target, since the other terms contribute `Σ(-log(1-0)) = 0`.
+
 ## Mentioned In
 
 - [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)

@@ -31,6 +31,12 @@ graph LR
     U --> F
 ```
 
+## Lecture's take
+
+**From [Session 2](../sessions/2-training-pipeline.md):**
+
+> `predict token → compare to expected → cross-entropy loss → backprop → update weights`. The weights updated include the embedding, attention, FFN, and the final linear layer — every weight in the model is updated by every gradient step.
+
 ## Mentioned In
 
 - [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)

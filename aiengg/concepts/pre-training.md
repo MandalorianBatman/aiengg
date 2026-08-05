@@ -33,6 +33,12 @@ graph LR
     Update --> Base[Base Model]
 ```
 
+## Lecture's take
+
+**From [Session 2](../sessions/2-training-pipeline.md):**
+
+> The first training stage. The model sees a massive corpus of public text, predicts the next token at every position, takes the cross-entropy loss, back-propagates, and updates its weights. This is where the model's "intelligence" — language, grammar, world knowledge — comes from.
+
 ## Mentioned In
 
 - [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)

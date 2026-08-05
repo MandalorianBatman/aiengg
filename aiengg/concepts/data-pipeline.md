@@ -21,6 +21,12 @@ Data quality determines model quality. Garbage in = garbage out. The data pipeli
 
 The data pipeline is like preparing ingredients for a massive banquet. You don't just dump everything from the market into the pot. You sort (filter), remove duplicates (someone sent the same ingredient twice), wash and chop (tokenize), and only then cook. The quality of the meal depends more on ingredient prep than on the stove.
 
+## Lecture's take
+
+**From [Session 2](../sessions/2-training-pipeline.md):**
+
+> Clone source data (GitHub archive for code, web crawls for text), filter out low-quality or unlicensed files, near-deduplicate near-copies, and the resulting corpus trains the transformer. Worked example: BigCode — 220M GitHub repos → 102 TB → ~30% keep → 6.4 TB after file selection → license filter + near-dedup → 3 TB final.
+
 ## Mentioned In
 
 - [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)

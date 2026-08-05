@@ -33,6 +33,12 @@ graph LR
     TN --> Loss
 ```
 
+## Lecture's take
+
+**From [Session 2](../sessions/2-training-pipeline.md):**
+
+> Each sentence of N tokens is converted into N training questions. Example: "There is no tomorrow" → "There is no \_\_\_", "There is \_\_\_ tomorrow", "There \_\_\_ tomorrow", "\_\_\_ no tomorrow". N tokens = N training signals per sentence. **Masked attention** makes this possible.
+
 ## Mentioned In
 
 [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)

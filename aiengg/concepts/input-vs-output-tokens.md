@@ -21,6 +21,12 @@ Understanding the input/output split is critical for cost estimation and prompt 
 
 Input tokens are like the ingredients you give a chef. Output tokens are the dish they prepare. You pay for both — the ingredients (just scanning them) and the cooking (the actual work of generating each new token).
 
+## Lecture's take
+
+**From [Session 1](../sessions/1-llm-basics.md):**
+
+> **Input tokens** are the context the model receives (docs, search results, chat history); **output tokens** are what the model generates. In typical apps, input tokens > output tokens.
+
 ## Mentioned In
 
 [LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)
