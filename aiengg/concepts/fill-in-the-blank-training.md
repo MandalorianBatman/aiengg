@@ -35,7 +35,7 @@ graph LR
 
 ## Mentioned In
 
-[Training Pipeline & Tool Use](../sessions/llm-training-pipeline-tool-use.md)
+[Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)
 
 ## Related Concepts
 

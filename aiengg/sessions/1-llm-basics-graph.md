@@ -1,6 +1,6 @@
 ---
-title: "Knowledge Graph — Recording 51: LLM Basics & Transformer Internals"
-tags: [session, r51, graph]
+title: "1. LLM Basics — Graph"
+tags: [session, 1, graph]
 ---
 
 # Knowledge Graph — Recording 51: LLM Basics & Transformer Internals
@@ -113,7 +113,7 @@ graph TD
 
 ## Related Materials
 
-- 📝 Lecture summary (enriched): [`sessions/llm-basics-transformer-internals.md`](sessions/llm-basics-transformer-internals.md)
+- 📝 Lecture summary (enriched): [`sessions/1-llm-basics.md`](sessions/1-llm-basics.md)
 - 📄 Raw transcript: [`transcripts/recording-51.srt`](transcripts/recording-51.srt)
-- 🧠 Structured JSON: [`sessions/llm-basics-transformer-internals-graph.json`](sessions/llm-basics-transformer-internals-graph.json)
+- 🧠 Structured JSON: [`sessions/1-llm-basics-graph.json`](sessions/1-llm-basics-graph.json)
 - 🌐 Combined view: [`sessions/combined-knowledge-graph.md`](sessions/combined-knowledge-graph.md)

@@ -23,9 +23,9 @@ A context window is like the size of your desk. A small desk = you can only work
 
 ## Mentioned In
 
-- [LLM Basics & Transformer Internals](../sessions/llm-basics-transformer-internals.md)
-- [Training Pipeline & Tool Use](../sessions/llm-training-pipeline-tool-use.md)
-- [Week 1 Networking — Doubt-Solving](../sessions/doubts-networking-week-1.md)
+- [LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)
+- [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)
+- [Week 1 Networking — Doubt-Solving](../sessions/3-week-1-doubts.md)
 
 ## Related Concepts
 

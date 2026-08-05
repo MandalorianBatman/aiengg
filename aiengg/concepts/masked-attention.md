@@ -35,7 +35,7 @@ graph TD
 
 ## Mentioned In
 
-[LLM Basics & Transformer Internals](../sessions/llm-basics-transformer-internals.md), [Training Pipeline & Tool Use](../sessions/llm-training-pipeline-tool-use.md)
+[LLM Basics & Transformer Internals](../sessions/1-llm-basics.md), [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)
 
 ## Related Concepts
 

@@ -1,6 +1,6 @@
 ---
-title: "Week 1 Networking — Doubt-Solving Session"
-tags: [session, networking, qa]
+title: "3. Week 1 Doubts & Networking"
+tags: [session, 3, qa]
 ---
 
 # Week 1 Networking — Doubt-Solving Session
@@ -344,8 +344,8 @@ The student-side confusion was whether there was a closed-form way to derive `W`
 ## Related Materials
 
 - 📄 Raw transcript: [`transcripts/networking-session-1.srt`](../transcripts/networking-session-1.srt)
-- 🕸️ Knowledge graph (visual): [`doubts-networking-week-1-graph.md`](doubts-networking-week-1-graph.md)
-- 🧠 Knowledge graph (JSON): [`doubts-networking-week-1-graph.json`](doubts-networking-week-1-graph.json)
+- 🕸️ Knowledge graph (visual): [`3-week-1-doubts-graph.md`](3-week-1-doubts-graph.md)
+- 🧠 Knowledge graph (JSON): [`3-week-1-doubts-graph.json`](3-week-1-doubts-graph.json)
 - 🌐 Combined view: [`combined-knowledge-graph.md`](combined-knowledge-graph.md)
 - 🌱 Browse concepts: [`../concepts/index.md`](../concepts/index.md)
-- 📝 Related teaching sessions: [R51 — LLM Basics & Transformer Internals](llm-basics-transformer-internals.md), [R52 — Training Pipeline, Tool Use & Fine-Tuning](llm-training-pipeline-tool-use.md)
+- 📝 Related teaching sessions: [R51 — LLM Basics & Transformer Internals](1-llm-basics.md), [R52 — Training Pipeline, Tool Use & Fine-Tuning](2-training-pipeline.md)

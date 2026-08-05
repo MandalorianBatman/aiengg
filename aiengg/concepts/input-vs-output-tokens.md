@@ -23,7 +23,7 @@ Input tokens are like the ingredients you give a chef. Output tokens are the dis
 
 ## Mentioned In
 
-[LLM Basics & Transformer Internals](../sessions/llm-basics-transformer-internals.md)
+[LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)
 
 ## Related Concepts
 

@@ -1,5 +1,5 @@
 ---
-title: "Combined Knowledge Graph — Recordings 51, 52, and Week 1 Networking"
+title: "Combined Knowledge Graph — Sessions 1-3"
 tags: [session, graph, all]
 ---
 
@@ -9,9 +9,9 @@ Three sessions from the AI Engineering Cohort (InterviewReady / Gaurav Sen) cove
 
 | Recording | Topic | Duration | Instructor | Key Theme |
 |-----------|-------|----------|------------|-----------|
-| **[51](sessions/llm-basics-transformer-internals.md)** | LLM Basics & Transformer Internals | 02:09:55 | Gaurav Sen (Speaker 0) | Architecture, attention, FFN |
-| **[52](sessions/llm-training-pipeline-tool-use.md)** | Training Pipeline, Tool Use & Fine-Tuning | 02:49:25 | Speaker 1 (NOT Gaurav Sen) | Pre-training, SFT, tool calling |
-| **[Networking Week 1](sessions/doubts-networking-week-1.md)** | Week 1 Doubts & Networking | 01:42:01 | Gaurav Sen (host), Tanishk, Tanishq | Q&A on Q/K/V, embeddings, FFN, hallucination, careers |
+| **[51](sessions/1-llm-basics.md)** | LLM Basics & Transformer Internals | 02:09:55 | Gaurav Sen (Speaker 0) | Architecture, attention, FFN |
+| **[52](sessions/2-training-pipeline.md)** | Training Pipeline, Tool Use & Fine-Tuning | 02:49:25 | Speaker 1 (NOT Gaurav Sen) | Pre-training, SFT, tool calling |
+| **[Networking Week 1](sessions/3-week-1-doubts.md)** | Week 1 Doubts & Networking | 01:42:01 | Gaurav Sen (host), Tanishk, Tanishq | Q&A on Q/K/V, embeddings, FFN, hallucination, careers |
 
 > **Attribution note.** R52's long-form instructor is Speaker 1, who the transcript introduces separately from "Gaurav" (the co-host). Earlier versions of these notes mis-attributed R52 to Gaurav Sen — corrected here.
 > **Networking Week 1 note.** This is a doubt-solving call that follows up on the R51/R52 material. Hosted by Gaurav Sen (Speaker 7) with co-instructors Tanishk (Speaker 1) and Tanishq (Speaker 4).
@@ -276,15 +276,15 @@ aiengg/
 ├── sessions/
 │   ├── index.md                                       # Master session list
 │   ├── combined-knowledge-graph.md                    # Cross-session unified view
-│   ├── llm-basics-transformer-internals.md             # R51 summary
-│   ├── llm-basics-transformer-internals-graph.md       # R51 Mermaid + tables
-│   ├── llm-basics-transformer-internals-graph.json     # R51 structured JSON
-│   ├── llm-training-pipeline-tool-use.md               # R52 summary
-│   ├── llm-training-pipeline-tool-use-graph.md         # R52 Mermaid + tables
-│   ├── llm-training-pipeline-tool-use-graph.json       # R52 structured JSON
-│   ├── doubts-networking-week-1.md                     # Week 1 networking Q&A
-│   ├── doubts-networking-week-1-graph.md               # Week 1 networking Mermaid + tables
-│   └── doubts-networking-week-1-graph.json             # Week 1 networking structured JSON
+│   ├── 1-llm-basics.md             # R51 summary
+│   ├── 1-llm-basics-graph.md       # R51 Mermaid + tables
+│   ├── 1-llm-basics-graph.json     # R51 structured JSON
+│   ├── 2-training-pipeline.md               # R52 summary
+│   ├── 2-training-pipeline-graph.md         # R52 Mermaid + tables
+│   ├── 2-training-pipeline-graph.json       # R52 structured JSON
+│   ├── 3-week-1-doubts.md                     # Week 1 networking Q&A
+│   ├── 3-week-1-doubts-graph.md               # Week 1 networking Mermaid + tables
+│   └── 3-week-1-doubts-graph.json             # Week 1 networking structured JSON
 │
 ├── concepts/
 │   ├── index.md                                       # Alphabetical concept index
@@ -303,15 +303,15 @@ aiengg/
 
 ## Related Materials
 
-- 📝 R51 summary: [`sessions/llm-basics-transformer-internals.md`](sessions/llm-basics-transformer-internals.md)
-- 📝 R52 summary: [`sessions/llm-training-pipeline-tool-use.md`](sessions/llm-training-pipeline-tool-use.md)
-- 📝 Networking Week 1 summary: [`sessions/doubts-networking-week-1.md`](sessions/doubts-networking-week-1.md)
-- 🕸️ R51 graph: [`sessions/llm-basics-transformer-internals-graph.md`](sessions/llm-basics-transformer-internals-graph.md)
-- 🕸️ R52 graph: [`sessions/llm-training-pipeline-tool-use-graph.md`](sessions/llm-training-pipeline-tool-use-graph.md)
-- 🕸️ Networking Week 1 graph: [`sessions/doubts-networking-week-1-graph.md`](sessions/doubts-networking-week-1-graph.md)
-- 🧠 R51 JSON: [`sessions/llm-basics-transformer-internals-graph.json`](sessions/llm-basics-transformer-internals-graph.json)
-- 🧠 R52 JSON: [`sessions/llm-training-pipeline-tool-use-graph.json`](sessions/llm-training-pipeline-tool-use-graph.json)
-- 🧠 Networking Week 1 JSON: [`sessions/doubts-networking-week-1-graph.json`](sessions/doubts-networking-week-1-graph.json)
+- 📝 R51 summary: [`sessions/1-llm-basics.md`](sessions/1-llm-basics.md)
+- 📝 R52 summary: [`sessions/2-training-pipeline.md`](sessions/2-training-pipeline.md)
+- 📝 Networking Week 1 summary: [`sessions/3-week-1-doubts.md`](sessions/3-week-1-doubts.md)
+- 🕸️ R51 graph: [`sessions/1-llm-basics-graph.md`](sessions/1-llm-basics-graph.md)
+- 🕸️ R52 graph: [`sessions/2-training-pipeline-graph.md`](sessions/2-training-pipeline-graph.md)
+- 🕸️ Networking Week 1 graph: [`sessions/3-week-1-doubts-graph.md`](sessions/3-week-1-doubts-graph.md)
+- 🧠 R51 JSON: [`sessions/1-llm-basics-graph.json`](sessions/1-llm-basics-graph.json)
+- 🧠 R52 JSON: [`sessions/2-training-pipeline-graph.json`](sessions/2-training-pipeline-graph.json)
+- 🧠 Networking Week 1 JSON: [`sessions/3-week-1-doubts-graph.json`](sessions/3-week-1-doubts-graph.json)
 - 📄 R51 transcript: [`transcripts/recording-51.srt`](transcripts/recording-51.srt)
 - 📄 R52 transcript: [`transcripts/recording-52.srt`](transcripts/recording-52.srt)
 - 📄 Networking transcript: [`transcripts/networking-session-1.srt`](transcripts/networking-session-1.srt)

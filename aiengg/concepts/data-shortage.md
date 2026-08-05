@@ -23,7 +23,7 @@ Pre-training is like a library. For years, models could browse new shelves (publ
 
 ## Mentioned In
 
-[Training Pipeline & Tool Use](../sessions/llm-training-pipeline-tool-use.md)
+[Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)
 
 ## Related Concepts
 

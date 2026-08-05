@@ -41,9 +41,9 @@ repo root) and deployed via Tailscale. The source lives in
 
 | # | Topic | Duration | Instructor |
 |---|-------|----------|------------|
-| [51](sessions/llm-basics-transformer-internals.md) | LLM Basics & Transformer Internals | 02:09:55 | Gaurav Sen (Speaker 0) |
-| [52](sessions/llm-training-pipeline-tool-use.md) | LLM Training Pipeline, Tool Use & Fine-Tuning | 02:49:25 | Speaker 1 (co-hosts: Tanishk, Ariana, Gaurav) |
-| [Networking Week 1](sessions/doubts-networking-week-1.md) | Week 1 Doubts: Q/K/V, embeddings, FFN, hallucination, careers | 01:42:01 | Gaurav Sen (Speaker 7) with Tanishk + Tanishq (co-instructors) |
+| [51](sessions/1-llm-basics.md) | LLM Basics & Transformer Internals | 02:09:55 | Gaurav Sen (Speaker 0) |
+| [52](sessions/2-training-pipeline.md) | LLM Training Pipeline, Tool Use & Fine-Tuning | 02:49:25 | Speaker 1 (co-hosts: Tanishk, Ariana, Gaurav) |
+| [Networking Week 1](sessions/3-week-1-doubts.md) | Week 1 Doubts: Q/K/V, embeddings, FFN, hallucination, careers | 01:42:01 | Gaurav Sen (Speaker 7) with Tanishk + Tanishq (co-instructors) |
 
 > **Note on R52 instructor.** Earlier versions of these notes attributed R52 to Gaurav Sen. The R52 transcript actually introduces "Gaurav" as a co-host separate from the long-form instructor (Speaker 1). The R51 instructor *is* Gaurav Sen. See the speakers table in the R52 lecture summary.
 
@@ -58,15 +58,15 @@ aiengg/
 │
 ├── sessions/
 │   ├── index.md                                    # Master session list
-│   ├── llm-basics-transformer-internals.md          # R51 detailed summary
-│   ├── llm-basics-transformer-internals-graph.md    # R51 Mermaid + concept tables
-│   ├── llm-basics-transformer-internals-graph.json  # R51 structured JSON
-│   ├── llm-training-pipeline-tool-use.md            # R52 detailed summary
-│   ├── llm-training-pipeline-tool-use-graph.md      # R52 Mermaid + concept tables
-│   ├── llm-training-pipeline-tool-use-graph.json    # R52 structured JSON
-│   ├── doubts-networking-week-1.md                  # Week 1 networking Q&A summary
-│   ├── doubts-networking-week-1-graph.md            # Week 1 networking Mermaid + tables
-│   ├── doubts-networking-week-1-graph.json          # Week 1 networking structured JSON
+│   ├── 1-llm-basics.md          # R51 detailed summary
+│   ├── 1-llm-basics-graph.md    # R51 Mermaid + concept tables
+│   ├── 1-llm-basics-graph.json  # R51 structured JSON
+│   ├── 2-training-pipeline.md            # R52 detailed summary
+│   ├── 2-training-pipeline-graph.md      # R52 Mermaid + concept tables
+│   ├── 2-training-pipeline-graph.json    # R52 structured JSON
+│   ├── 3-week-1-doubts.md                  # Week 1 networking Q&A summary
+│   ├── 3-week-1-doubts-graph.md            # Week 1 networking Mermaid + tables
+│   ├── 3-week-1-doubts-graph.json          # Week 1 networking structured JSON
 │   └── combined-knowledge-graph.md                  # Cross-session unified view
 │
 ├── concepts/
@@ -112,17 +112,17 @@ Detailed markdown write-ups of each recording. Every concept block contains:
 
 If you want to **understand LLMs end-to-end**, read in this order:
 
-1. [LLM Basics & Transformer Internals](sessions/llm-basics-transformer-internals.md) — what an LLM *is* (architecture)
-2. [Training Pipeline, Tool Use & Fine-Tuning](sessions/llm-training-pipeline-tool-use.md) — how an LLM *is built* (training)
-3. [Week 1 Networking (Doubts)](sessions/doubts-networking-week-1.md) — common Week 1 confusions resolved (encoder/decoder, embeddings, FFN, hallucination)
+1. [LLM Basics & Transformer Internals](sessions/1-llm-basics.md) — what an LLM *is* (architecture)
+2. [Training Pipeline, Tool Use & Fine-Tuning](sessions/2-training-pipeline.md) — how an LLM *is built* (training)
+3. [Week 1 Networking (Doubts)](sessions/3-week-1-doubts.md) — common Week 1 confusions resolved (encoder/decoder, embeddings, FFN, hallucination)
 4. [Combined knowledge graph](sessions/combined-knowledge-graph.md) — unified mental model
 
 If you want to **dive into a specific concept**, jump to:
 
 - [Concept index](concepts/index.md) — browse all concepts alphabetically
-- [Mermaid diagrams for Session 51](sessions/llm-basics-transformer-internals-graph.md)
-- [Mermaid diagrams for Session 52](sessions/llm-training-pipeline-tool-use-graph.md)
-- [Mermaid diagrams for Networking Week 1](sessions/doubts-networking-week-1-graph.md)
+- [Mermaid diagrams for Session 51](sessions/1-llm-basics-graph.md)
+- [Mermaid diagrams for Session 52](sessions/2-training-pipeline-graph.md)
+- [Mermaid diagrams for Networking Week 1](sessions/3-week-1-doubts-graph.md)
 
 ## Key Concepts at a Glance
 

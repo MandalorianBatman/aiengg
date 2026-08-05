@@ -1,13 +1,13 @@
 ---
-title: "Knowledge Graph — Week 1 Networking (Doubt-Solving)"
-tags: [session, networking, graph]
+title: "3. Week 1 Doubts — Graph"
+tags: [session, 3, graph]
 ---
 
 # Knowledge Graph — Week 1 Networking (Doubt-Solving)
 
 **Source:** [`transcripts/networking-session-1.srt`](../transcripts/networking-session-1.srt)
 **Session type:** Doubt-Solving (Wednesday networking call)
-**Companion to:** [R51 — LLM Basics & Transformer Internals](llm-basics-transformer-internals.md) (which introduced these topics in teaching form)
+**Companion to:** [R51 — LLM Basics & Transformer Internals](1-llm-basics.md) (which introduced these topics in teaching form)
 
 ## Concept Map
 
@@ -220,9 +220,9 @@ graph TD
 
 ## Related Materials
 
-- 📝 Session summary: [`doubts-networking-week-1.md`](doubts-networking-week-1.md)
+- 📝 Session summary: [`3-week-1-doubts.md`](3-week-1-doubts.md)
 - 📄 Raw transcript: [`../transcripts/networking-session-1.srt`](../transcripts/networking-session-1.srt)
 - 🌱 Browse concepts: [`../concepts/index.md`](../concepts/index.md)
-- 📚 Earlier teaching session this week: [R51 — LLM Basics & Transformer Internals](llm-basics-transformer-internals.md)
-- 📚 The next teaching session: [R52 — Training Pipeline, Tool Use & Fine-Tuning](llm-training-pipeline-tool-use.md)
+- 📚 Earlier teaching session this week: [R51 — LLM Basics & Transformer Internals](1-llm-basics.md)
+- 📚 The next teaching session: [R52 — Training Pipeline, Tool Use & Fine-Tuning](2-training-pipeline.md)
 - 🌐 [Combined knowledge graph](combined-knowledge-graph.md)

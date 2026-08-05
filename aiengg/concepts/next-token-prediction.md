@@ -23,7 +23,7 @@ Like a GPS that only tells you the next turn. You get from Delhi to Mumbai one t
 
 ## Mentioned In
 
-[LLM Basics & Transformer Internals](../sessions/llm-basics-transformer-internals.md)
+[LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)
 
 ## Related Concepts
 

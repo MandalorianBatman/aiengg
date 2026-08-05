@@ -21,7 +21,7 @@ The linear layer is like a translator at the UN. The transformer does its work i
 
 ## Mentioned In
 
-[LLM Basics & Transformer Internals](../sessions/llm-basics-transformer-internals.md)
+[LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)
 
 ## Related Concepts
 

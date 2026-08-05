@@ -1,6 +1,6 @@
 ---
-title: "Knowledge Graph — Recording 52: LLM Training, Tool Use & Fine-Tuning"
-tags: [session, r52, graph]
+title: "2. Training Pipeline — Graph"
+tags: [session, 2, graph]
 ---
 
 # Knowledge Graph — Recording 52: LLM Training, Tool Use & Fine-Tuning
@@ -166,7 +166,7 @@ sequenceDiagram
 
 ## Related Materials
 
-- � Lecture summary (enriched): [`sessions/llm-training-pipeline-tool-use.md`](sessions/llm-training-pipeline-tool-use.md)
+- � Lecture summary (enriched): [`sessions/2-training-pipeline.md`](sessions/2-training-pipeline.md)
 - 📄 Raw transcript: [`transcripts/recording-52.srt`](transcripts/recording-52.srt)
-- 🧠 Structured JSON: [`sessions/llm-training-pipeline-tool-use-graph.json`](sessions/llm-training-pipeline-tool-use-graph.json)
+- 🧠 Structured JSON: [`sessions/2-training-pipeline-graph.json`](sessions/2-training-pipeline-graph.json)
 - 🌐 Combined view: [`sessions/combined-knowledge-graph.md`](sessions/combined-knowledge-graph.md)

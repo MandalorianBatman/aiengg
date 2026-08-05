@@ -23,7 +23,7 @@ Temperature is like the 'creativity slider' on a music app. At 0, it plays the m
 
 ## Mentioned In
 
-[LLM Basics & Transformer Internals](../sessions/llm-basics-transformer-internals.md)
+[LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)
 
 ## Related Concepts
 

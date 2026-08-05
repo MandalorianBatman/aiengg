@@ -1,6 +1,6 @@
 ---
-title: "Recording 51 — LLM Basics & Transformer Internals"
-tags: [session, r51, architecture]
+title: "1. LLM Basics & Transformer Internals"
+tags: [session, 1, architecture]
 ---
 
 # Recording 51 — LLM Basics & Transformer Internals
@@ -280,6 +280,6 @@ The lecture walks through the transformer block by block. The shape annotations 
 ## Related Materials
 
 - 📄 Raw transcript: [`transcripts/recording-51.srt`](transcripts/recording-51.srt)
-- 🕸️ Knowledge graph (visual): [`sessions/llm-basics-transformer-internals-graph.md`](sessions/llm-basics-transformer-internals-graph.md)
-- 🧠 Knowledge graph (structured JSON): [`sessions/llm-basics-transformer-internals-graph.json`](sessions/llm-basics-transformer-internals-graph.json)
+- 🕸️ Knowledge graph (visual): [`sessions/1-llm-basics-graph.md`](sessions/1-llm-basics-graph.md)
+- 🧠 Knowledge graph (structured JSON): [`sessions/1-llm-basics-graph.json`](sessions/1-llm-basics-graph.json)
 - � Combined view across both recordings: [`sessions/combined-knowledge-graph.md`](sessions/combined-knowledge-graph.md)
