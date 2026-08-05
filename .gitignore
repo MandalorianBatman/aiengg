@@ -1,1 +1,8 @@
 *.srt
+
+# Quartz build output and dependencies
+node_modules/
+public/
+.quartz-cache/
+.quartz/
+tsconfig.tsbuildinfo

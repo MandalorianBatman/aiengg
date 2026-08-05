@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   build:
-    name: build (docsify image)
+    name: build (quartz image)
     runs-on: [self-hosted, aiengg, linux, x64]
     permissions:
       contents: read
@@ -29,7 +29,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: ./docker
+          # Build from the repo root so the Dockerfile can COPY aiengg/, quartz/,
+          # package.json, etc. The Dockerfile itself lives at docker/Dockerfile.
+          context: .
+          file: docker/Dockerfile
           push: true
           tags: |
             ghcr.io/mandalorianbatman/aiengg-docsify:${{ github.sha }}

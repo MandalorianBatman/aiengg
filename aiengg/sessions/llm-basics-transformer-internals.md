@@ -1,3 +1,8 @@
+---
+title: "Recording 51 — LLM Basics & Transformer Internals"
+tags: [session, r51, architecture]
+---
+
 # Recording 51 — LLM Basics & Transformer Internals
 
 **Source:** [`transcripts/recording-51.srt`](transcripts/recording-51.srt)

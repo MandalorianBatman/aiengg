@@ -1,3 +1,8 @@
+---
+title: "Byte Pair Encoding (BPE)"
+tags: [concept, architecture]
+---
+
 # Byte Pair Encoding (BPE)
 
 **Category:** 

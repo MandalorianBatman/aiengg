@@ -1,3 +1,8 @@
+---
+title: "Next-Token Prediction"
+tags: [concept, architecture]
+---
+
 # Next-Token Prediction
 
 **Category:** 

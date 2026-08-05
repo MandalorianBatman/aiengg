@@ -1,3 +1,8 @@
+---
+title: "Week 1 Networking — Doubt-Solving Session"
+tags: [session, networking, qa]
+---
+
 # Week 1 Networking — Doubt-Solving Session
 
 **Source:** [`transcripts/networking-session-1.srt`](../transcripts/networking-session-1.srt)

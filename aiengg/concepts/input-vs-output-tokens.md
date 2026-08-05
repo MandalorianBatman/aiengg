@@ -1,3 +1,8 @@
+---
+title: "Input vs Output Tokens"
+tags: [concept, architecture]
+---
+
 # Input vs Output Tokens
 
 **Category:** 

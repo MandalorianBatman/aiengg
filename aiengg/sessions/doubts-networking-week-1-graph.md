@@ -1,3 +1,8 @@
+---
+title: "Knowledge Graph — Week 1 Networking (Doubt-Solving)"
+tags: [session, networking, graph]
+---
+
 # Knowledge Graph — Week 1 Networking (Doubt-Solving)
 
 **Source:** [`transcripts/networking-session-1.srt`](../transcripts/networking-session-1.srt)

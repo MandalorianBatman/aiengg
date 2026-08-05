@@ -1,3 +1,8 @@
+---
+title: "Session Index"
+tags: [session, index]
+---
+
 # Session Index
 
 All recorded sessions from the AI Engineering Cohort, organized by topic.

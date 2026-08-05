@@ -1,3 +1,8 @@
+---
+title: "Recording 52 — LLM Training Pipeline, Tool Use & Fine-Tuning"
+tags: [session, r52, training]
+---
+
 # Recording 52 — LLM Training Pipeline, Tool Use & Fine-Tuning
 
 **Source:** [`transcripts/recording-52.srt`](transcripts/recording-52.srt)

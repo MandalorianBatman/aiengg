@@ -1,3 +1,8 @@
+---
+title: "Linear Layer (Unembedding / LM Head)"
+tags: [concept, architecture]
+---
+
 # Linear Layer (Unembedding / LM Head)
 
 **Category:** 

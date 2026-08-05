@@ -1,3 +1,8 @@
+---
+title: "Feed-Forward Network (FFN)"
+tags: [concept, architecture]
+---
+
 # Feed-Forward Network (FFN)
 
 **Category:** 

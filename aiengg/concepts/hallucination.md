@@ -1,3 +1,8 @@
+---
+title: "Hallucination"
+tags: [concept, capabilities]
+---
+
 # Hallucination
 
 **Category:** LLM behavior / capability failure mode

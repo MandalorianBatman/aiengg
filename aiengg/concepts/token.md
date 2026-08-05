@@ -1,3 +1,8 @@
+---
+title: "Token"
+tags: [concept, architecture]
+---
+
 # Token
 
 **Category:** 

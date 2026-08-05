@@ -1,18 +1,16 @@
 services:
-  docsify:
+  quartz:
     image: ${IMAGE:-ghcr.io/mandalorianbatman/aiengg-docsify:latest}
-    container_name: aiengg-docsify
+    container_name: aiengg-quartz
     restart: unless-stopped
     expose:
       - "3000"
-    volumes:
-      - /home/zed/dev/ci-cd/aiengg/aiengg:/docs:ro
     healthcheck:
       test: ["CMD-SHELL", "wget -q -O- http://127.0.0.1:3000/ >/dev/null"]
       interval: 30s
       timeout: 5s
       retries: 5
-      start_period: 60s
+      start_period: 30s
     networks:
       - services_network
 

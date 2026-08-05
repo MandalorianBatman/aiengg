@@ -1,12 +1,12 @@
 services:
-  docsify:
-    build: .
-    container_name: aiengg-docsify
+  quartz:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: aiengg-quartz
     restart: unless-stopped
     ports:
       - "127.0.0.1:3000:3000"
-    volumes:
-      # Mount the aiengg folder as the docsify document root.
-      # The index.html, _sidebar.md, _coverpage.md are baked into the
-      # folder itself so the layout is fully co-located with content.
-      - /home/zed/aiengg-docsify/aiengg:/docs:ro
+    # No volume mount: the static site is baked into the image by the
+    # multi-stage build. To preview local edits, run `npx quartz build --serve`
+    # on the host instead.

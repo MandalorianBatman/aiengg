@@ -1,3 +1,8 @@
+---
+title: "Data Shortage"
+tags: [concept, training]
+---
+
 # Data Shortage
 
 **Category:** 

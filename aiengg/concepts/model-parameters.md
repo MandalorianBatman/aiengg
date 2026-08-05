@@ -1,3 +1,8 @@
+---
+title: "Model Parameters"
+tags: [concept, architecture]
+---
+
 # Model Parameters
 
 **Category:** 

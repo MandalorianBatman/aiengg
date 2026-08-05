@@ -1,3 +1,8 @@
+---
+title: "Pre-training"
+tags: [concept, training]
+---
+
 # Pre-training
 
 **Category:** 

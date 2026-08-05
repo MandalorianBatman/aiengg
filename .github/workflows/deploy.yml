@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   deploy:
-    name: deploy (self-hosted)
+    name: deploy (quartz)
     runs-on: [self-hosted, aiengg, linux, x64]
     environment: production
     if: |

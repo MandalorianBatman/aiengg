@@ -1,3 +1,8 @@
+---
+title: "Concept Garden"
+tags: [concept]
+---
+
 # Concept Garden
 
 Browse all concepts across the AI Engineering course. Each concept page includes a canonical definition, analogies, Mermaid diagrams, related concepts, and backlinks to every session that mentions it.

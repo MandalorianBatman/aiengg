@@ -1,3 +1,8 @@
+---
+title: "Temperature / Sampling"
+tags: [concept, inference]
+---
+
 # Temperature / Sampling
 
 **Category:** 

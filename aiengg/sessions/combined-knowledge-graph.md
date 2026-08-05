@@ -1,3 +1,8 @@
+---
+title: "Combined Knowledge Graph — Recordings 51, 52, and Week 1 Networking"
+tags: [session, graph, all]
+---
+
 # Combined Knowledge Graph — Recordings 51, 52, and Week 1 Networking
 
 Three sessions from the AI Engineering Cohort (InterviewReady / Gaurav Sen) covering the foundations of how LLMs work end-to-end.

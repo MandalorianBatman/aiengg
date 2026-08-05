@@ -1,0 +1,19 @@
+# Reduce the build context sent to Docker. The Dockerfile only COPYs the
+# quartz/, aiengg/, and root package.json/etc. — everything else is noise.
+
+.git
+.gitignore
+.github
+.claude
+public
+node_modules
+.quartz-cache
+.quartz
+transcripts
+*.srt
+*.mp4
+*.tsbuildinfo
+Dockerfile
+docker-compose.yml
+README.md
+scripts

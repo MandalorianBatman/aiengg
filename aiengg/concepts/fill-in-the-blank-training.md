@@ -1,3 +1,8 @@
+---
+title: "Fill-in-the-Blank Training"
+tags: [concept, training]
+---
+
 # Fill-in-the-Blank Training
 
 **Category:** 

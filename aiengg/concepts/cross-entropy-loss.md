@@ -1,3 +1,8 @@
+---
+title: "Cross-Entropy Loss"
+tags: [concept, training]
+---
+
 # Cross-Entropy Loss
 
 **Category:** 

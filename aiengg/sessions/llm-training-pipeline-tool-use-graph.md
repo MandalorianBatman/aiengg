@@ -1,3 +1,8 @@
+---
+title: "Knowledge Graph — Recording 52: LLM Training, Tool Use & Fine-Tuning"
+tags: [session, r52, graph]
+---
+
 # Knowledge Graph — Recording 52: LLM Training, Tool Use & Fine-Tuning
 
 **Source:** [`transcripts/recording-52.srt`](transcripts/recording-52.srt)

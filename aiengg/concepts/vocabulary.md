@@ -1,3 +1,8 @@
+---
+title: "Vocabulary"
+tags: [concept, architecture]
+---
+
 # Vocabulary
 
 **Category:** 

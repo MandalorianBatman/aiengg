@@ -1,3 +1,8 @@
+---
+title: "Vector (Embedding)"
+tags: [concept, architecture]
+---
+
 # Vector (Embedding)
 
 **Category:** 

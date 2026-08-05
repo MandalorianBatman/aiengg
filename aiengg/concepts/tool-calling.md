@@ -1,3 +1,8 @@
+---
+title: "Tool Calling / Function Calls"
+tags: [concept, capabilities]
+---
+
 # Tool Calling / Function Calls
 
 **Category:** 

@@ -1,3 +1,8 @@
+---
+title: "Supervised Fine-Tuning (SFT)"
+tags: [concept, training]
+---
+
 # Supervised Fine-Tuning (SFT)
 
 **Category:** 
