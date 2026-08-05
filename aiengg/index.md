@@ -8,6 +8,35 @@ aliases: [README, README.md]
 
 Knowledge artifacts for two foundational classes plus a Week 1 networking Q&A from the **AI Engineering Cohort** (InterviewReady / Gaurav Sen).
 
+## About
+
+This is a personal knowledge base built from the recordings of the AI
+Engineering Cohort run by [InterviewReady](https://interviewready.io/) (with
+[Gaurav Sen](https://www.youtube.com/@GauravSen) as a long-form instructor).
+The goal is to turn lecture audio into durable, interlinked written material
+that I can refer back to — and that improves as more sessions are added.
+
+Each recording is processed into three layers:
+
+1. **A detailed write-up** — every concept block contains the lecture's own
+   take, a canonical definition sourced from the original paper or canonical
+   blog, the key insight underneath, and 1–3 high-quality further-reading
+   links.
+2. **A knowledge graph** — Mermaid diagrams of how concepts connect, plus a
+   JSON dump for programmatic use.
+3. **A concept garden** — each concept gets its own page with definition,
+   analogies, Mermaid diagrams, and backlinks to every session that mentions
+   it. As more recordings are added, concept pages grow richer over time.
+
+The notes are not a transcript. They are cross-checked against the SRT,
+corrected where the instructor misspoke (see the [validation log](#validation-status)
+at the bottom), and linked together so the [graph view](concepts/index.md)
+works as a real index into the material.
+
+This site is built with [Quartz](https://quartz.jzhao.xyz/) (vendored at the
+repo root) and deployed via Tailscale. The source lives in
+[`MandalorianBatman/aiengg`](https://github.com/MandalorianBatman/aiengg).
+
 ## Sessions
 
 | # | Topic | Duration | Instructor |

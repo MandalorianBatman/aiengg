@@ -7,6 +7,26 @@ tags: [concept]
 
 Browse all concepts across the AI Engineering course. Each concept page includes a canonical definition, analogies, Mermaid diagrams, related concepts, and backlinks to every session that mentions it.
 
+## About
+
+The Concept Garden is the digital-garden half of this knowledge base. Every
+concept that gets named in any lecture — from "byte-pair encoding" to
+"preference optimization" — gets its own page with:
+
+- a **canonical definition** drawn from the original paper or canonical blog,
+- an **analogy or mental model** to make the concept stick,
+- a **Mermaid diagram** of how it fits in the bigger picture,
+- a **related concepts** table linking to the other concept pages it touches,
+- and an **automatic backlink list** — every session that mentioned it.
+
+As more recordings are added, the same page picks up more backlinks without
+any extra work: the graph view in the right sidebar of every page also gets
+denser automatically. Browse by topic below, or use the Explorer / Graph
+panel to wander.
+
+Use the [graph view](#graph) (button on the right of any page) to see this
+whole garden as a connected graph.
+
 ## Architecture & Internals
 
 | Concept | Mentions |

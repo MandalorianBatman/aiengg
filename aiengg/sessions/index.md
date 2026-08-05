@@ -7,6 +7,26 @@ tags: [session, index]
 
 All recorded sessions from the AI Engineering Cohort, organized by topic.
 
+## About
+
+This index lists every recording that has been processed into notes so far.
+Each row links to a full write-up with a concept-by-concept summary (every
+idea mentioned in the lecture), the SRT transcript (if you want to verify
+against source), and a Mermaid knowledge graph showing how the concepts in
+that session connect to each other.
+
+Sessions come in two types:
+
+- **Teaching** — original lecture sessions that introduce new material
+  (Recordings 51 and 52).
+- **Doubt Solving** — Q&A sessions where the instructors work through
+  questions students raised in the cohort (Networking Week 1).
+
+The [combined knowledge graph](combined-knowledge-graph.md) ties every
+session into one view — useful when you want to see how an architecture
+concept from Session 51 connects to a training-pipeline concept from
+Session 52.
+
 | Slug | Recording | Topic | Duration | Instructor | Type |
 |------|-----------|-------|----------|------------|------|
 | [llm-basics-transformer-internals](llm-basics-transformer-internals.md) | 51 | LLM Basics & Transformer Internals | 02:09:55 | Gaurav Sen | Teaching |
