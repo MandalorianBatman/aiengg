@@ -50,7 +50,7 @@
     {
       "id": "masked_attention_recap",
       "name": "Masking Recap",
-      "definition": "Same as Recording 51 — prevents looking ahead. Crucial for turning 1 sentence into N training pairs.",
+      "definition": "Same as Session 1 — prevents looking ahead. Crucial for turning 1 sentence into N training pairs.",
       "category": "training-technique"
     },
     {

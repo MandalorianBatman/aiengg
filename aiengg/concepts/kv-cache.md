@@ -31,7 +31,7 @@ KV cache is like pre-computed answers in a textbook. If you're solving math prob
 
 - [LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)
 - [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)
-- [Week 1 Networking — Doubt-Solving](../sessions/3-week-1-doubts.md)
+- [Week 1 Doubts & Networking](../sessions/3-week-1-doubts.md)
 
 ## Related Concepts
 

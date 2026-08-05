@@ -32,7 +32,7 @@ Cross-entropy loss is like a strict teacher grading your exam. If you say 'I'm 1
 ## Mentioned In
 
 - [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)
-- [Week 1 Networking — Doubt-Solving](../sessions/3-week-1-doubts.md)
+- [Week 1 Doubts & Networking](../sessions/3-week-1-doubts.md)
 
 ## Related Concepts
 

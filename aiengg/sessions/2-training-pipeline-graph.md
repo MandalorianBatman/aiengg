@@ -3,7 +3,7 @@ title: "2. Training Pipeline — Graph"
 tags: [session, 2, graph]
 ---
 
-# Knowledge Graph — Recording 52: LLM Training, Tool Use & Fine-Tuning
+# Knowledge Graph — Session 2: Training Pipeline, Tool Use & Fine-Tuning
 
 **Source:** [`transcripts/recording-52.srt`](transcripts/recording-52.srt)
 **Instructor:** Speaker 1 (NOT Gaurav Sen — see "Speakers" table in the lecture summary)

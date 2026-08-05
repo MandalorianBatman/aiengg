@@ -3,7 +3,7 @@ title: "1. LLM Basics — Graph"
 tags: [session, 1, graph]
 ---
 
-# Knowledge Graph — Recording 51: LLM Basics & Transformer Internals
+# Knowledge Graph — Session 1: LLM Basics & Transformer Internals
 
 **Source:** [`transcripts/recording-51.srt`](transcripts/recording-51.srt)
 **Instructor:** Gaurav Sen (Speaker 0)

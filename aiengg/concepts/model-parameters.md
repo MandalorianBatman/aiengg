@@ -24,7 +24,7 @@ Parameters are like the coefficients in a giant polynomial. A 7-billion-paramete
 ## Mentioned In
 
 - [LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)
-- [Week 1 Networking — Doubt-Solving](../sessions/3-week-1-doubts.md)
+- [Week 1 Doubts & Networking](../sessions/3-week-1-doubts.md)
 
 ## Related Concepts
 

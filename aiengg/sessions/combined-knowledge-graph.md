@@ -3,7 +3,7 @@ title: "Combined Knowledge Graph — Sessions 1-3"
 tags: [session, graph, all]
 ---
 
-# Combined Knowledge Graph — Recordings 51, 52, and Week 1 Networking
+# Combined Knowledge Graph — Sessions 1-3
 
 Three sessions from the AI Engineering Cohort (InterviewReady / Gaurav Sen) covering the foundations of how LLMs work end-to-end.
 
@@ -11,16 +11,16 @@ Three sessions from the AI Engineering Cohort (InterviewReady / Gaurav Sen) cove
 |-----------|-------|----------|------------|-----------|
 | **[51](sessions/1-llm-basics.md)** | LLM Basics & Transformer Internals | 02:09:55 | Gaurav Sen (Speaker 0) | Architecture, attention, FFN |
 | **[52](sessions/2-training-pipeline.md)** | Training Pipeline, Tool Use & Fine-Tuning | 02:49:25 | Speaker 1 (NOT Gaurav Sen) | Pre-training, SFT, tool calling |
-| **[Networking Week 1](sessions/3-week-1-doubts.md)** | Week 1 Doubts & Networking | 01:42:01 | Gaurav Sen (host), Tanishk, Tanishq | Q&A on Q/K/V, embeddings, FFN, hallucination, careers |
+| **[Week 1](sessions/3-week-1-doubts.md)** | Week 1 Doubts | 01:42:01 | Gaurav Sen (host), Tanishk, Tanishq | Q&A on Q/K/V, embeddings, FFN, hallucination, careers |
 
-> **Attribution note.** R52's long-form instructor is Speaker 1, who the transcript introduces separately from "Gaurav" (the co-host). Earlier versions of these notes mis-attributed R52 to Gaurav Sen — corrected here.
-> **Networking Week 1 note.** This is a doubt-solving call that follows up on the R51/R52 material. Hosted by Gaurav Sen (Speaker 7) with co-instructors Tanishk (Speaker 1) and Tanishq (Speaker 4).
+> **Attribution note.** Session 2's long-form instructor is Speaker 1, who the transcript introduces separately from "Gaurav" (the co-host). Earlier versions of these notes mis-attributed Session 2 to Gaurav Sen — corrected here.
+> **Week 1 note.** This is a doubt-solving call that follows up on the Session 1/Session 2 material. Hosted by Gaurav Sen (Speaker 7) with co-instructors Tanishk (Speaker 1) and Tanishq (Speaker 4).
 
 ## End-to-End Concept Graph
 
 ```mermaid
 graph TD
-    %% Recording 51: Architecture
+    %% Session 1: Architecture
     Text[Input Text] -->|BPE| Tokens[Tokens]
     Tokens -->|embed| Vectors[8192-D Vectors]
     Vectors --> QKV[Q, K, V matrices]
@@ -32,7 +32,7 @@ graph TD
     Probs --> NextToken[Next Token]
     NextToken --> Tokens
 
-    %% Recording 52: Training pipeline
+    %% Session 2: Training pipeline
     PublicData[Public Datasets] -->|tokenize| Tokens
     Attn --> Loop[Training Loop:<br/>predict → loss → backprop]
     Loop --> CELoss[Cross-Entropy Loss]
@@ -58,7 +58,7 @@ graph TD
     PrefOpt --> PPO[PPO]
     Sigmoid[Sigmoid] --> PrefOpt
 
-    %% Networking Week 1 doubts session clarifications
+    %% Week 1 doubts session clarifications
     subgraph "Networking Wk1: Week 1 Doubts"
         Q2[Encoder vs decoder? → decoder-only modern LLMs]
         Q3[Embeddings live in weights, NOT vector DB]
@@ -85,9 +85,9 @@ graph TD
 
 ## Concept Map Across Both Sessions
 
-### From Recording 51 → Recording 52
+### From Session 1 → Session 2
 
-| Recording 51 (Architecture) | Recording 52 (Training) |
+| Session 1 (Architecture) | Session 2 (Training) |
 |----------------------------|------------------------|
 | Transformer block | Pre-training produces the base model |
 | Attention (Q, K, V) | Updated during training via cross-entropy loss |
@@ -102,7 +102,7 @@ graph TD
 
 ```mermaid
 graph LR
-    subgraph "Recording 51: What is a Transformer?"
+    subgraph "Session 1: What is a Transformer?"
         A1[Tokens] --> A2[Vectors]
         A2 --> A3[Attention]
         A3 --> A4[Contextualized Vectors]
@@ -111,7 +111,7 @@ graph LR
         A6 --> A7[Probabilities]
     end
 
-    subgraph "Recording 52: How is it Trained?"
+    subgraph "Session 2: How is it Trained?"
         B1[Public Data] --> B2[Pre-training]
         B2 --> B3[Base Model]
         B3 --> B4[SFT]
@@ -129,7 +129,7 @@ graph LR
 
 ## Unified Concept Index
 
-### Architecture (Recording 51)
+### Architecture (Session 1)
 
 | Concept | Further reading |
 |---------|-----------------|
@@ -146,7 +146,7 @@ graph LR
 | Vocabulary | [HF NLP Course §4](https://huggingface.co/learn/llm-course/chapter2/4) |
 | N-grams (historical comparison) | [Jurafsky & Martin — SLP Ch. 3](https://web.stanford.edu/~jurafsky/slp3/) |
 
-### Training Pipeline (Recording 52)
+### Training Pipeline (Session 2)
 
 | Concept | Further reading |
 |---------|-----------------|
@@ -175,7 +175,7 @@ graph LR
 - Model parameters → [HF LLM Course Ch. 1](https://huggingface.co/learn/llm-course/chapter1)
 - DeepSeek (GRPO populariser) → [Shao 2024 — DeepSeekMath](https://arxiv.org/abs/2402.03300)
 
-### Doubt-Solving Clarifications (Networking Week 1)
+### Doubt-Solving Clarifications (Week 1)
 
 | Clarified misconception | Resolution | Concept page |
 |------------------------|------------|--------------|
@@ -195,9 +195,9 @@ graph LR
 
 | Recording | Long-form instructor | Co-hosts |
 |-----------|---------------------|----------|
-| R51 | Gaurav Sen (Speaker 0) | (no co-hosts identified in transcript) |
-| R52 | Speaker 1 | Tanishk (IIT Bombay), Ariana (IIT Madras), Gaurav |
-| Networking Week 1 | Gaurav Sen (Speaker 7) | Tanishk (Speaker 1) — main voice answering technical Qs · Tanishq (Speaker 4) — screen-share demos |
+| Session 1 | Gaurav Sen (Speaker 0) | (no co-hosts identified in transcript) |
+| Session 2 | Speaker 1 | Tanishk (IIT Bombay), Ariana (IIT Madras), Gaurav |
+| Week 1 | Gaurav Sen (Speaker 7) | Tanishk (Speaker 1) — main voice answering technical Qs · Tanishq (Speaker 4) — screen-share demos |
 
 ### Datasets Mentioned
 
@@ -209,11 +209,11 @@ graph LR
 
 ### Papers Referenced
 
-- [Vaswani et al., 2017 — Attention Is All You Need](https://arxiv.org/abs/1706.03762) (R51, Networking Wk1)
-- [Schulman et al., 2017 — PPO](https://arxiv.org/abs/1707.06347) (R52)
-- [Rafailov et al., 2023 — DPO](https://arxiv.org/abs/2305.18290) (R52)
-- [Shao et al., 2024 — DeepSeekMath / GRPO](https://arxiv.org/abs/2402.03300) (R52)
-- [Sennrich et al., 2016 — BPE](https://arxiv.org/abs/1508.07909) (R51, Networking Wk1 — for subword decomposition of unknown tokens)
+- [Vaswani et al., 2017 — Attention Is All You Need](https://arxiv.org/abs/1706.03762) (Session 1, Networking Wk1)
+- [Schulman et al., 2017 — PPO](https://arxiv.org/abs/1707.06347) (Session 2)
+- [Rafailov et al., 2023 — DPO](https://arxiv.org/abs/2305.18290) (Session 2)
+- [Shao et al., 2024 — DeepSeekMath / GRPO](https://arxiv.org/abs/2402.03300) (Session 2)
+- [Sennrich et al., 2016 — BPE](https://arxiv.org/abs/1508.07909) (Session 1, Networking Wk1 — for subword decomposition of unknown tokens)
 - [Mikolov et al., 2013 — Word2Vec](https://arxiv.org/abs/1301.3781) (Networking Wk1 — for "cluster similar vectors" intuition)
 - [Rombach et al., 2021 — Latent Diffusion / Stable Diffusion](https://arxiv.org/abs/2112.10752) (Networking Wk1 — ComfyUI / diffusion discussion)
 - [Hu et al., 2021 — LoRA](https://arxiv.org/abs/2106.09685) (Networking Wk1 — LoRA for diffusion + LLMs)
@@ -221,8 +221,8 @@ graph LR
 ### Vendors / Models
 
 - **DeepSeek** — GRPO populariser; mentioned in Networking Wk1 token-vs-attention mixing question
-- **Google / Gemini** — private datasets (R52); image generation (Networking Wk1 — "nano banana")
-- **OpenAI** — tool-calling example (R52); GPT-3.5 → GPT-5 progression (Networking Wk1)
+- **Google / Gemini** — private datasets (Session 2); image generation (Networking Wk1 — "nano banana")
+- **OpenAI** — tool-calling example (Session 2); GPT-3.5 → GPT-5 progression (Networking Wk1)
 - **Gemma** — mention in Networking Wk1 token/attention mixing question
 - **Flux / Flux Dev** — open-source diffusion model (Networking Wk1)
 - **Meta (Llama)** — implicitly (RMSNorm / RoPE conventions)
@@ -276,12 +276,12 @@ aiengg/
 ├── sessions/
 │   ├── index.md                                       # Master session list
 │   ├── combined-knowledge-graph.md                    # Cross-session unified view
-│   ├── 1-llm-basics.md             # R51 summary
-│   ├── 1-llm-basics-graph.md       # R51 Mermaid + tables
-│   ├── 1-llm-basics-graph.json     # R51 structured JSON
-│   ├── 2-training-pipeline.md               # R52 summary
-│   ├── 2-training-pipeline-graph.md         # R52 Mermaid + tables
-│   ├── 2-training-pipeline-graph.json       # R52 structured JSON
+│   ├── 1-llm-basics.md             # Session 1 summary
+│   ├── 1-llm-basics-graph.md       # Session 1 Mermaid + tables
+│   ├── 1-llm-basics-graph.json     # Session 1 structured JSON
+│   ├── 2-training-pipeline.md               # Session 2 summary
+│   ├── 2-training-pipeline-graph.md         # Session 2 Mermaid + tables
+│   ├── 2-training-pipeline-graph.json       # Session 2 structured JSON
 │   ├── 3-week-1-doubts.md                     # Week 1 networking Q&A
 │   ├── 3-week-1-doubts-graph.md               # Week 1 networking Mermaid + tables
 │   └── 3-week-1-doubts-graph.json             # Week 1 networking structured JSON
@@ -291,8 +291,8 @@ aiengg/
 │   └── ...                                            # ~28 concept pages
 │
 ├── transcripts/
-│   ├── recording-51.srt                               # Raw SRT (1991 segments)
-│   ├── recording-52.srt                               # Raw SRT (2559 segments)
+│   ├── session-1.srt                               # Raw SRT (1991 segments)
+│   ├── session-2.srt                               # Raw SRT (2559 segments)
 │   └── networking-session-1.srt                       # Week 1 networking SRT (1339 segments)
 │
 └── scripts/
@@ -303,16 +303,16 @@ aiengg/
 
 ## Related Materials
 
-- 📝 R51 summary: [`sessions/1-llm-basics.md`](sessions/1-llm-basics.md)
-- 📝 R52 summary: [`sessions/2-training-pipeline.md`](sessions/2-training-pipeline.md)
-- 📝 Networking Week 1 summary: [`sessions/3-week-1-doubts.md`](sessions/3-week-1-doubts.md)
-- 🕸️ R51 graph: [`sessions/1-llm-basics-graph.md`](sessions/1-llm-basics-graph.md)
-- 🕸️ R52 graph: [`sessions/2-training-pipeline-graph.md`](sessions/2-training-pipeline-graph.md)
-- 🕸️ Networking Week 1 graph: [`sessions/3-week-1-doubts-graph.md`](sessions/3-week-1-doubts-graph.md)
-- 🧠 R51 JSON: [`sessions/1-llm-basics-graph.json`](sessions/1-llm-basics-graph.json)
-- 🧠 R52 JSON: [`sessions/2-training-pipeline-graph.json`](sessions/2-training-pipeline-graph.json)
-- 🧠 Networking Week 1 JSON: [`sessions/3-week-1-doubts-graph.json`](sessions/3-week-1-doubts-graph.json)
-- 📄 R51 transcript: [`transcripts/recording-51.srt`](transcripts/recording-51.srt)
-- 📄 R52 transcript: [`transcripts/recording-52.srt`](transcripts/recording-52.srt)
+- 📝 Session 1 summary: [`sessions/1-llm-basics.md`](sessions/1-llm-basics.md)
+- 📝 Session 2 summary: [`sessions/2-training-pipeline.md`](sessions/2-training-pipeline.md)
+- 📝 Week 1 summary: [`sessions/3-week-1-doubts.md`](sessions/3-week-1-doubts.md)
+- 🕸️ Session 1 graph: [`sessions/1-llm-basics-graph.md`](sessions/1-llm-basics-graph.md)
+- 🕸️ Session 2 graph: [`sessions/2-training-pipeline-graph.md`](sessions/2-training-pipeline-graph.md)
+- 🕸️ Week 1 graph: [`sessions/3-week-1-doubts-graph.md`](sessions/3-week-1-doubts-graph.md)
+- 🧠 Session 1 JSON: [`sessions/1-llm-basics-graph.json`](sessions/1-llm-basics-graph.json)
+- 🧠 Session 2 JSON: [`sessions/2-training-pipeline-graph.json`](sessions/2-training-pipeline-graph.json)
+- 🧠 Week 1 JSON: [`sessions/3-week-1-doubts-graph.json`](sessions/3-week-1-doubts-graph.json)
+- 📄 Session 1 transcript: [`transcripts/session-1.srt`](transcripts/session-1.srt)
+- 📄 Session 2 transcript: [`transcripts/session-2.srt`](transcripts/session-2.srt)
 - 📄 Networking transcript: [`transcripts/networking-session-1.srt`](transcripts/networking-session-1.srt)
 - 🌱 Browse concepts: [`../concepts/index.md`](../concepts/index.md)

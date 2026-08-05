@@ -54,7 +54,7 @@ graph TD
 
 **From [Session 2](../sessions/2-training-pipeline.md):**
 
-> In R52 the instructor misspoke PPO as "Proximal Preference Optimization" — the canonical name is **Proximal Policy Optimization** (Schulman et al., 2017). PPO was the original RL algorithm used for RLHF in InstructGPT.
+> In session 2 the instructor misspoke PPO as "Proximal Preference Optimization" — the canonical name is **Proximal Policy Optimization** (Schulman et al., 2017). PPO was the original RL algorithm used for RLHF in InstructGPT.
 
 **From [Session 2](../sessions/2-training-pipeline.md):**
 
@@ -67,7 +67,7 @@ graph TD
 ## Mentioned In
 
 - [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)
-- [Week 1 Networking — Doubt-Solving](../sessions/3-week-1-doubts.md)
+- [Week 1 Doubts](../sessions/3-week-1-doubts.md)
 
 ## Related Concepts
 

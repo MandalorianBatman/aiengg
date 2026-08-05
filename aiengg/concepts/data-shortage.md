@@ -25,7 +25,7 @@ Pre-training is like a library. For years, models could browse new shelves (publ
 
 **From [Session 2](../sessions/2-training-pipeline.md):**
 
-> Not asserted in R52 — earlier versions of these notes added it as a takeaway. The "running out of public training data" framing is current industry knowledge (Epoch AI, 2024), not part of the lecture. Listed here for completeness and linked to the source.
+> Not asserted in session 2 — earlier versions of these notes added it as a takeaway. The "running out of public training data" framing is current industry knowledge (Epoch AI, 2024), not part of the lecture. Listed here for completeness and linked to the source.
 
 ## Mentioned In
 

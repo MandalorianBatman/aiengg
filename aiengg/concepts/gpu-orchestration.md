@@ -30,7 +30,7 @@ GPU orchestration is like an assembly line. One worker (GPU) can't build a car a
 ## Mentioned In
 
 - [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)
-- [Week 1 Networking — Doubt-Solving](../sessions/3-week-1-doubts.md)
+- [Week 1 Doubts & Networking](../sessions/3-week-1-doubts.md)
 
 ## Related Concepts
 

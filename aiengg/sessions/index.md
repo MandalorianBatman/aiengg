@@ -20,18 +20,18 @@ Sessions come in two types:
 - **Teaching** — original lecture sessions that introduce new material
   (Recordings 51 and 52).
 - **Doubt Solving** — Q&A sessions where the instructors work through
-  questions students raised in the cohort (Networking Week 1).
+  questions students raised in the cohort (Week 1).
 
 The [combined knowledge graph](combined-knowledge-graph.md) ties every
 session into one view — useful when you want to see how an architecture
-concept from Session 51 connects to a training-pipeline concept from
-Session 52.
+concept from Session 1 connects to a training-pipeline concept from
+Session 2.
 
 | Slug | Recording | Topic | Duration | Instructor | Type |
 |------|-----------|-------|----------|------------|------|
 | [1-llm-basics](1-llm-basics.md) | 51 | LLM Basics & Transformer Internals | 02:09:55 | Gaurav Sen | Teaching |
 | [2-training-pipeline](2-training-pipeline.md) | 52 | Training Pipeline, Tool Use & Fine-Tuning | 02:49:25 | Speaker 1 | Teaching |
-| [3-week-1-doubts](3-week-1-doubts.md) | Networking Week 1 | Week 1 Doubts: transformer internals, embeddings, FFN, hallucination, careers | 01:42:01 | Gaurav Sen (host), Tanishk, Tanishq | Doubt Solving |
+| [3-week-1-doubts](3-week-1-doubts.md) | Week 1 | Week 1 Doubts: transformer internals, embeddings, FFN, hallucination, careers | 01:42:01 | Gaurav Sen (host), Tanishk, Tanishq | Doubt Solving |
 
 ## Session Types
 
@@ -41,6 +41,6 @@ Session 52.
 ## Knowledge Graphs
 
 - [Combined knowledge graph](combined-knowledge-graph.md) — unified view across all sessions
-- [Session 51 visual graph](1-llm-basics-graph.md)
-- [Session 52 visual graph](2-training-pipeline-graph.md)
-- [Networking Week 1 visual graph](3-week-1-doubts-graph.md)
+- [Session 1 visual graph](1-llm-basics-graph.md)
+- [Session 2 visual graph](2-training-pipeline-graph.md)
+- [Week 1 visual graph](3-week-1-doubts-graph.md)

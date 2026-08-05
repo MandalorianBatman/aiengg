@@ -30,7 +30,7 @@ Think of BPE like a compression algorithm for language. Instead of storing every
 ## Mentioned In
 
 - [LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)
-- [Week 1 Networking — Doubt-Solving](../sessions/3-week-1-doubts.md)
+- [Week 1 Doubts & Networking](../sessions/3-week-1-doubts.md)
 
 ## Related Concepts
 

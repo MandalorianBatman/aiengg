@@ -12,7 +12,7 @@ tags: [session, 2, training]
 **Duration:** 02:49:25
 **Speakers:** 25 · **Segments:** 2559
 
-> **Note on attribution.** R51's long-form instructor is Gaurav Sen (Speaker 0). In R52 the transcript introduces "Gaurav" as a co-host separate from Speaker 1, so R52's long-form instructor is Speaker 1 (likely Tanishk or Ariana). Earlier versions mis-attributed R52 to Gaurav Sen.
+> **Note on attribution.** Session 1's long-form instructor is Gaurav Sen (Speaker 0). In session 2 the transcript introduces "Gaurav" as a co-host separate from Speaker 1, so Session 2's long-form instructor is Speaker 1 (likely Tanishk or Ariana). Earlier versions mis-attributed session 2 to Gaurav Sen.
 
 > **What this session is.** A teaching lecture that walks through the full LLM training pipeline: pre-training, SFT, tool calling, preference optimization, and model serving. Anchored by the framing "most of the intelligence is in pre-training; most of the behaviour in post-training."
 
@@ -23,7 +23,7 @@ tags: [session, 2, training]
 | Instructor | **Speaker 1** | Delivers the long-form teaching content |
 | Co-host | "Tanishk" | IIT Bombay — AI engineer, healthcare-startup background |
 | Co-host | "Ariana" | IIT Madras |
-| Co-host | "Gaurav" | AI engineer (the Gaurav Sen of the cohort, separate from R52's instructor) |
+| Co-host | "Gaurav" | AI engineer (the Gaurav Sen of the cohort, separate from session 2's instructor) |
 | Students | Speaker 2–25 | Various short questions and clarifications |
 
 ## Agenda

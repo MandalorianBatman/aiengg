@@ -29,7 +29,7 @@ Vocabulary size is like the number of keys on a keyboard. More keys = more expre
 
 - [LLM Basics & Transformer Internals](../sessions/1-llm-basics.md)
 - [Training Pipeline & Tool Use](../sessions/2-training-pipeline.md)
-- [Week 1 Networking — Doubt-Solving](../sessions/3-week-1-doubts.md)
+- [Week 1 Doubts & Networking](../sessions/3-week-1-doubts.md)
 
 ## Related Concepts
 
